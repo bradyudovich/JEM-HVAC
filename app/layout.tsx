@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, DM_Serif_Display } from 'next/font/google'
+import { Footer } from '@/app/components/Footer'
+import { Header } from '@/app/components/Header'
 import './globals.css'
 
 const geistSans = Geist({
@@ -58,7 +60,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${dmSerifDisplay.variable}`}
     >
       <body className="bg-surface text-text font-sans antialiased">
-        {children}
+        <div className="flex min-h-screen flex-col bg-surface text-text">
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   )
