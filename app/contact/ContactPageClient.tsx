@@ -33,11 +33,11 @@ export function ContactPageClient() {
 
           <form onSubmit={handleSubmit} className="rounded-2xl bg-white p-6 shadow-md space-y-4">
             <h2 className="font-display text-3xl">Send a Message</h2>
-            <label className="block">Name (required)<input required type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
-            <label className="block">Phone<input type="tel" className="mt-1 w-full rounded-xl border p-2" /></label>
-            <label className="block">Email (required)<input required type="email" className="mt-1 w-full rounded-xl border p-2" /></label>
-            <label className="block">City &amp; State<input type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
-            <label className="block">Message<textarea rows={5} className="mt-1 w-full rounded-xl border p-2" /></label>
+            <label className="block">Name (required)<input required name="name" type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
+            <label className="block">Phone<input name="phone" type="tel" className="mt-1 w-full rounded-xl border p-2" /></label>
+            <label className="block">Email (required)<input required name="email" type="email" className="mt-1 w-full rounded-xl border p-2" /></label>
+            <label className="block">City &amp; State<input name="cityState" type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
+            <label className="block">Message<textarea name="message" rows={5} className="mt-1 w-full rounded-xl border p-2" /></label>
             <button type="submit" className="rounded-full bg-accent px-6 py-3 text-white font-semibold">Submit</button>
           </form>
         </div>

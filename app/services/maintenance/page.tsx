@@ -24,49 +24,49 @@ export default function MaintenancePage() {
         <fieldset>
           <legend className="font-display text-2xl">Commercial or Residential</legend>
           <div className="mt-3 flex gap-6">
-            <label><input type="radio" name="property" className="mr-2" />Commercial</label>
-            <label><input type="radio" name="property" className="mr-2" />Residential</label>
+            <label><input type="radio" name="property" value="commercial" className="mr-2" />Commercial</label>
+            <label><input type="radio" name="property" value="residential" className="mr-2" />Residential</label>
           </div>
         </fieldset>
 
         <fieldset>
           <legend className="font-semibold">Fuel type</legend>
-          <div className="mt-2 grid sm:grid-cols-2 gap-2">{fuels.map((item) => <label key={item}><input type="checkbox" className="mr-2" />{item}</label>)}</div>
+          <div className="mt-2 grid sm:grid-cols-2 gap-2">{fuels.map((item) => <label key={item}><input type="checkbox" name="fuelType" value={item} className="mr-2" />{item}</label>)}</div>
         </fieldset>
 
         <fieldset>
           <legend className="font-semibold">Appliances</legend>
-          <div className="mt-2 grid sm:grid-cols-2 gap-2">{appliances.map((item) => <label key={item}><input type="checkbox" className="mr-2" />{item}</label>)}</div>
+          <div className="mt-2 grid sm:grid-cols-2 gap-2">{appliances.map((item) => <label key={item}><input type="checkbox" name="appliances" value={item} className="mr-2" />{item}</label>)}</div>
         </fieldset>
 
         <fieldset>
           <legend className="font-semibold">Blower location</legend>
-          <div className="mt-2 grid sm:grid-cols-2 gap-2">{blowerLocations.map((item) => <label key={item}><input type="checkbox" className="mr-2" />{item}</label>)}</div>
+          <div className="mt-2 grid sm:grid-cols-2 gap-2">{blowerLocations.map((item) => <label key={item}><input type="checkbox" name="blowerLocation" value={item} className="mr-2" />{item}</label>)}</div>
         </fieldset>
 
         <div className="grid md:grid-cols-2 gap-4">
-          <label className="block">Total thermostats/systems<input type="number" className="mt-1 w-full rounded-xl border p-2" /></label>
-          <label className="block">Zip code<input type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label className="block">Total thermostats/systems<input type="number" name="systemCount" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label className="block">Zip code<input type="text" name="zipCode" className="mt-1 w-full rounded-xl border p-2" /></label>
         </div>
 
         <fieldset>
           <legend className="font-semibold">Service frequency</legend>
-          <div className="mt-2 flex flex-wrap gap-4">{frequencies.map((item) => <label key={item}><input type="radio" name="frequency" className="mr-2" />{item}</label>)}</div>
+          <div className="mt-2 flex flex-wrap gap-4">{frequencies.map((item) => <label key={item}><input type="radio" name="frequency" value={item} className="mr-2" />{item}</label>)}</div>
         </fieldset>
 
         <fieldset>
           <legend className="font-semibold">Additional appliances</legend>
-          <div className="mt-2 grid sm:grid-cols-2 gap-2">{additional.map((item) => <label key={item}><input type="checkbox" className="mr-2" />{item}</label>)}</div>
+          <div className="mt-2 grid sm:grid-cols-2 gap-2">{additional.map((item) => <label key={item}><input type="checkbox" name="additionalAppliances" value={item} className="mr-2" />{item}</label>)}</div>
         </fieldset>
 
         <div className="grid md:grid-cols-2 gap-4">
-          <label>Name<input type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
-          <label>Address<input type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
-          <label>City<input type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
-          <label>State<input type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
-          <label>Zip<input type="text" className="mt-1 w-full rounded-xl border p-2" /></label>
-          <label>Phone<input type="tel" className="mt-1 w-full rounded-xl border p-2" /></label>
-          <label className="md:col-span-2">Email<input type="email" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>Name<input type="text" name="name" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>Address<input type="text" name="address" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>City<input type="text" name="city" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>State<input type="text" name="state" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>Zip<input type="text" name="zip" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>Phone<input type="tel" name="phone" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label className="md:col-span-2">Email<input type="email" name="email" className="mt-1 w-full rounded-xl border p-2" /></label>
         </div>
 
         <button type="submit" className="rounded-full bg-accent px-6 py-3 text-white font-semibold">Submit</button>
