@@ -13,6 +13,15 @@ export function Header() {
 
   return (
     <>
+      <div className="bg-accent text-white text-xs text-center py-1.5 px-4">
+        <span className="font-medium">Serving Carroll County since 1997</span>
+        <span className="mx-2 opacity-60">|</span>
+        <span>Mon–Fri 8AM–4:30PM</span>
+        <span className="mx-2 opacity-60">|</span>
+        <span>Emergency service available</span>
+        <span className="mx-2 opacity-60">|</span>
+        <a href="tel:18886840657" className="font-semibold underline hover:no-underline">1-888-684-0657</a>
+      </div>
       <header className="sticky top-0 z-50 w-full bg-primary shadow-lg">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-2 px-4 md:h-20 md:px-8">
           <Link href="/" className="flex items-baseline gap-2" onClick={() => setMobileOpen(false)}>

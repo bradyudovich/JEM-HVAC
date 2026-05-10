@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BadgeCheck, Building2, ChevronDown, Clock, Home, Phone, Shield, ThumbsUp, Wind } from 'lucide-react'
+import { BadgeCheck, Building2, Clock, Home, Shield, ThumbsUp, Wind } from 'lucide-react'
 import { createPageMetadata } from '@/app/lib/metadata'
 import { testimonials } from '@/app/lib/testimonials'
 import { CTABanner } from '@/app/components/CTABanner'
@@ -43,26 +43,28 @@ const serviceCards = [
 export default function HomePage() {
   return (
     <>
-      <section className="bg-primary flex items-center justify-center text-center px-4 md:px-6" style={{ minHeight: '70vh' }}>
-        <div className="max-w-4xl mx-auto py-12 md:py-16">
+      <section
+        className="bg-primary flex items-center justify-center text-center px-4"
+        style={{ minHeight: '60vh', paddingTop: '4rem', paddingBottom: '4rem' }}
+      >
+        <div className="max-w-3xl mx-auto">
           <p className="text-accent uppercase tracking-widest text-xs font-semibold mb-2">
             Carroll County, Maryland
           </p>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-3">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white leading-tight mb-3">
             Carroll County&apos;s Trusted HVAC Experts Since 1997
           </h1>
-          <p className="text-sm md:text-lg text-white/70 max-w-xl mx-auto mb-6">
+          <p className="text-sm md:text-base text-white/70 max-w-lg mx-auto mb-5">
             Professional heating &amp; cooling service, fast response times, and honest pricing for residential and commercial clients.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
-            <a href="/contact" className="w-full sm:w-auto bg-accent text-white rounded-full px-8 py-3 font-semibold text-sm hover:bg-orange-600 focus-visible:bg-orange-600 transition-colors">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <a href="/contact" className="w-full sm:w-auto bg-accent text-white rounded-full px-7 py-2.5 font-semibold text-sm hover:bg-orange-600 transition-colors">
               Request Service
             </a>
-            <a href="/services" className="w-full sm:w-auto border-2 border-white text-white rounded-full px-8 py-3 font-semibold text-sm hover:bg-white hover:text-primary focus-visible:bg-white focus-visible:text-primary transition-colors">
+            <a href="/services" className="w-full sm:w-auto border-2 border-white text-white rounded-full px-7 py-2.5 font-semibold text-sm hover:bg-white hover:text-primary transition-colors">
               View Services
             </a>
           </div>
-          <ChevronDown className="w-6 h-6 text-white/30 animate-bounce mx-auto" aria-hidden="true" />
         </div>
       </section>
 
@@ -203,11 +205,10 @@ export default function HomePage() {
             </p>
           </div>
           <a
-            href="tel:18886840657"
+            href="/contact"
             className="flex items-center gap-2 bg-accent text-white rounded-full px-8 py-3 font-semibold text-sm hover:bg-orange-600 focus-visible:bg-orange-600 transition-colors whitespace-nowrap flex-shrink-0"
           >
-            <Phone className="w-4 h-4" aria-hidden="true" />
-            Call 1-888-684-0657
+            Request Emergency Service
           </a>
         </div>
       </section>
@@ -215,8 +216,8 @@ export default function HomePage() {
       <CTABanner
         heading="Ready to Schedule Service?"
         subtext="Call us toll-free or send a message — we respond quickly."
-        primaryLabel="Call 1-888-684-0657"
-        primaryHref="tel:1-888-684-0657"
+        primaryLabel="Schedule Service"
+        primaryHref="/contact"
         secondaryLabel="Send a Message"
         secondaryHref="/contact"
       />

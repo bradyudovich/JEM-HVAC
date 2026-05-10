@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react'
+import { Shield, BadgeCheck, Zap } from 'lucide-react'
 import { createPageMetadata } from '@/app/lib/metadata'
 import { PageHero } from '@/app/components/PageHero'
 import { CTABanner } from '@/app/components/CTABanner'
@@ -9,12 +9,6 @@ export const metadata = createPageMetadata({
     'Learn about JEM Heating and Air Conditioning and our commitment to honesty, integrity, and expediency since 1997.',
   path: '/about',
 })
-
-const values = [
-  { title: 'Honesty', description: 'Clear communication and straightforward recommendations every time.' },
-  { title: 'Integrity', description: 'We do what we say and stand behind our workmanship.' },
-  { title: 'Expediency', description: 'Fast, dependable response when your comfort is on the line.' },
-]
 
 export default function AboutPage() {
   return (
@@ -43,20 +37,41 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-2 text-center text-sm font-semibold uppercase tracking-widest text-accent">Our Values</p>
-          <h2 className="mb-4 text-center text-2xl font-display font-bold text-primary md:text-4xl">How We Work</h2>
-          <div className="mx-auto mb-12 h-1 w-16 bg-accent" />
-
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-8">
-            {values.map((value) => (
-              <article key={value.title} className="rounded-2xl border-t-4 border-accent bg-white p-6 shadow-md hover:shadow-xl md:p-8">
-                <Star className="mb-4 h-4 w-4 fill-yellow-400 text-yellow-400" aria-hidden="true" />
-                <h3 className="mb-2 text-lg font-display font-bold text-primary md:text-xl">{value.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">{value.description}</p>
-              </article>
-            ))}
+      <section className="bg-surface py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-10">
+            <p className="text-accent uppercase tracking-widest text-xs font-semibold mb-2">Our Values</p>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-3">How We Work</h2>
+            <div className="w-12 h-1 bg-accent mx-auto"></div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8">
+            <div className="bg-white rounded-2xl p-8 text-center shadow-sm">
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="text-lg font-display font-bold text-primary mb-2">Honesty</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Clear communication and straightforward recommendations every time. No upselling, no surprises.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 text-center shadow-sm">
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <BadgeCheck className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="text-lg font-display font-bold text-primary mb-2">Integrity</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                We do what we say and stand behind every job. If something isn&apos;t right, we make it right.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 text-center shadow-sm">
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-6 h-6 text-accent" />
+              </div>
+              <h3 className="text-lg font-display font-bold text-primary mb-2">Expediency</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Fast, dependable response when your comfort is on the line. We know waiting isn&apos;t an option.
+              </p>
+            </div>
           </div>
         </div>
       </section>
