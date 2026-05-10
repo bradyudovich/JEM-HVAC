@@ -11,7 +11,7 @@ export const metadata = createPageMetadata({
 })
 
 const fieldClass =
-  'w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent'
+  'w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent'
 
 export default function YorkWarrantyPage() {
   return (
@@ -26,32 +26,32 @@ export default function YorkWarrantyPage() {
         ]}
       />
 
-      <section className="bg-surface py-12 md:py-20">
-        <div className="mx-auto max-w-7xl space-y-8 px-6">
-          <article className="rounded-2xl bg-white p-8 shadow-md">
+      <section className="bg-surface px-4 py-12 md:px-6 md:py-20">
+        <div className="mx-auto max-w-7xl space-y-8">
+          <article className="rounded-2xl bg-white p-6 shadow-md md:p-8">
             <h2 className="mb-4 border-t-4 border-accent pt-4 text-xl font-display font-bold text-primary">
               York Comfort Plan — Terms & Conditions
             </h2>
-            <Link href="/york_warranty.pdf" className="inline-block rounded-full bg-accent px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-orange-600">
+            <Link href="/york_warranty.pdf" className="inline-flex min-h-[44px] min-w-[44px] items-center rounded-full bg-accent px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-orange-600 focus-visible:bg-orange-600">
               Download PDF
             </Link>
           </article>
 
-          <form className="rounded-2xl bg-white p-8 shadow-md space-y-4">
-            <label className="flex items-start gap-2 text-sm text-gray-700">
+          <form className="space-y-4 rounded-2xl bg-white p-6 shadow-md md:p-10">
+            <label className="flex items-start gap-2 text-base text-gray-700">
               <input type="checkbox" name="acceptTerms" className="mt-1" />
               <span>I accept the York Comfort Plan terms and conditions</span>
             </label>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <label className="text-sm font-semibold text-gray-700">Name<input type="text" name="name" className={fieldClass} /></label>
-              <label className="text-sm font-semibold text-gray-700">Address<input type="text" name="address" className={fieldClass} /></label>
-              <label className="text-sm font-semibold text-gray-700">City<input type="text" name="city" className={fieldClass} /></label>
-              <label className="text-sm font-semibold text-gray-700">State<input type="text" name="state" className={fieldClass} /></label>
-              <label className="text-sm font-semibold text-gray-700">Zip<input type="text" name="zip" className={fieldClass} /></label>
-              <label className="text-sm font-semibold text-gray-700">Phone<input type="tel" name="phone" className={fieldClass} /></label>
-              <label className="text-sm font-semibold text-gray-700 md:col-span-2">Email<input type="email" name="email" className={fieldClass} /></label>
+              <label className="text-base font-semibold text-gray-700">Name<input type="text" name="name" className={fieldClass} /></label>
+              <label className="text-base font-semibold text-gray-700">Address<input type="text" name="address" className={fieldClass} /></label>
+              <label className="text-base font-semibold text-gray-700">City<input type="text" name="city" className={fieldClass} /></label>
+              <label className="text-base font-semibold text-gray-700">State<input type="text" name="state" className={fieldClass} /></label>
+              <label className="text-base font-semibold text-gray-700">Zip<input type="text" name="zip" className={fieldClass} /></label>
+              <label className="text-base font-semibold text-gray-700">Phone<input type="tel" name="phone" className={fieldClass} /></label>
+              <label className="text-base font-semibold text-gray-700 md:col-span-2">Email<input type="email" name="email" className={fieldClass} /></label>
             </div>
-            <button type="submit" className="rounded-full bg-accent px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-orange-600">Submit</button>
+            <button type="submit" className="min-h-[44px] min-w-[44px] w-full rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white hover:bg-orange-600 focus-visible:bg-orange-600">Submit</button>
           </form>
         </div>
       </section>

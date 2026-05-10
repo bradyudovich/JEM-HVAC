@@ -4,7 +4,7 @@ import { siteConfig } from '@/app/lib/site-config'
 
 export function ContactCta() {
   return (
-    <section id="contact" className="bg-accent py-20 text-center">
+    <section id="contact" className="bg-accent px-4 py-12 text-center md:px-6 md:py-20">
       <Container>
         <SectionHeading
           eyebrow="Contact"
@@ -18,7 +18,10 @@ export function ContactCta() {
           <p>{siteConfig.address}</p>
         </div>
 
-        <Link href={`tel:${siteConfig.phone}`} className="mt-8 inline-block rounded-full bg-white px-8 py-3 font-semibold text-accent hover:bg-gray-100">
+        <Link
+          href={`tel:${siteConfig.phone}`}
+          className="mt-8 inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white px-8 py-3 font-semibold text-accent hover:bg-gray-100 focus-visible:bg-gray-100"
+        >
           Call Now
         </Link>
       </Container>

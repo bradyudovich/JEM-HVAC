@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Building2, Home, Wrench } from 'lucide-react'
 import { createPageMetadata } from '@/app/lib/metadata'
 import { PageHero } from '@/app/components/PageHero'
 import { CTABanner } from '@/app/components/CTABanner'
@@ -12,19 +13,19 @@ export const metadata = createPageMetadata({
 
 const serviceCards = [
   {
-    icon: '🏠',
+    icon: Home,
     title: 'Residential Services',
     description: 'Complete home heating and cooling support for all makes and models.',
     href: '/services/residential',
   },
   {
-    icon: '🏢',
+    icon: Building2,
     title: 'Commercial Services',
     description: 'Repair, maintenance, and replacement for business HVAC equipment.',
     href: '/services/commercial',
   },
   {
-    icon: '🔧',
+    icon: Wrench,
     title: 'Maintenance Contract',
     description: 'Preventive maintenance agreements for long-term comfort and reliability.',
     href: '/services/maintenance',
@@ -40,24 +41,25 @@ export default function ServicesPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
       />
 
-      <section className="bg-surface py-12 md:py-20">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="bg-surface px-4 py-12 md:px-6 md:py-20">
+        <div className="mx-auto max-w-7xl">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Services</p>
-          <h2 className="mb-4 text-4xl font-display font-bold text-primary">Complete HVAC Support</h2>
+          <h2 className="mb-4 text-2xl font-display font-bold text-primary md:text-4xl">Complete HVAC Support</h2>
           <p>
             JEM provides dependable HVAC service across Carroll County, from emergency repairs and
             preventive maintenance to complete system replacement.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
             {serviceCards.map((card) => (
-              <article key={card.title} className="rounded-2xl border-t-4 border-accent bg-white p-8 shadow-md hover:shadow-xl">
-                <p className="mb-4 text-3xl text-accent" aria-hidden="true">
-                  {card.icon}
-                </p>
-                <h3 className="mb-2 text-xl font-display font-bold text-primary">{card.title}</h3>
+              <article key={card.title} className="rounded-2xl border-t-4 border-accent bg-white p-6 shadow-md hover:shadow-xl md:p-8">
+                <card.icon className="mb-4 h-5 w-5 text-accent" aria-hidden="true" />
+                <h3 className="mb-2 text-lg font-display font-bold text-primary md:text-xl">{card.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">{card.description}</p>
-                <Link href={card.href} className="mt-4 inline-block text-sm font-semibold text-accent hover:underline">
+                <Link
+                  href={card.href}
+                  className="mt-4 inline-flex min-h-[44px] min-w-[44px] items-center text-sm font-semibold text-accent hover:underline focus-visible:underline"
+                >
                   View Service
                 </Link>
               </article>
