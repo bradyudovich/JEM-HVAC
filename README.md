@@ -33,6 +33,16 @@ A Next.js website for JEM Heating & Air Conditioning, prepared for local develop
 
 ## Deployment
 
+### GitHub Pages (configured in-repo)
+
+This repo now includes a Pages workflow at `.github/workflows/deploy-pages.yml` that builds and deploys the Next.js site artifact from `main`.
+
+1. In **GitHub → Settings → Pages**, set **Source** to **GitHub Actions**.
+2. Push to `main` (or trigger the workflow manually from Actions).
+3. The workflow builds the Next.js app and deploys the exported `out/` directory.
+
+### Vercel (optional alternative)
+
 1. Push the project to GitHub.
 2. In Vercel, click **Add New Project** and import `bradyudovich/JEM-HVAC`.
 3. Vercel will detect Next.js automatically.
