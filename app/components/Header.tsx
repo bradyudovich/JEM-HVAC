@@ -16,7 +16,7 @@ export function Header() {
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-6">
           <Link href="/" className="flex items-baseline gap-2" onClick={() => setMobileOpen(false)}>
             <span className="font-display text-2xl font-bold text-accent">JEM</span>
-            <span className="text-sm text-white font-sans">Heating & Air Conditioning</span>
+            <span className="text-sm text-white">Heating & Air Conditioning</span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Main navigation">
@@ -26,7 +26,7 @@ export function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`text-sm font-sans uppercase tracking-wide text-white hover:text-accent ${pathname === item.href ? 'text-accent' : ''}`}
+                    className={`text-sm uppercase tracking-wide hover:text-accent ${pathname === item.href ? 'text-accent' : 'text-white'}`}
                   >
                     {item.label}
                   </Link>
@@ -42,7 +42,7 @@ export function Header() {
                 >
                   <button
                     type="button"
-                    className="text-sm font-sans uppercase tracking-wide text-white hover:text-accent"
+                    className="text-sm uppercase tracking-wide text-white hover:text-accent"
                     aria-expanded={servicesOpen}
                   >
                     {item.label}
@@ -115,7 +115,7 @@ export function Header() {
               <div key={item.href} className="border-b border-white/20 pb-4">
                 <Link
                   href={item.href}
-                  className="block text-base font-sans uppercase tracking-wide text-white hover:text-accent"
+                  className="block text-base uppercase tracking-wide text-white hover:text-accent"
                   onClick={() => setMobileOpen(false)}
                 >
                   {item.label}
@@ -126,7 +126,7 @@ export function Header() {
                       <Link
                         key={child.href}
                         href={child.href}
-                        className="block text-sm font-sans uppercase tracking-wide text-white/80 hover:text-accent"
+                        className="block text-sm uppercase tracking-wide text-white/80 hover:text-accent"
                         onClick={() => setMobileOpen(false)}
                       >
                         {child.label}

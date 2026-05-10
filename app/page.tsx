@@ -12,10 +12,10 @@ export const metadata = createPageMetadata({
 })
 
 const trustItems = [
-  ['1997', 'Since', 'Serving Carroll County'],
-  ['24/7', 'Support', 'Emergency Service Available'],
-  ['100%', 'Coverage', 'All Makes & Models Serviced'],
-  ['2', 'Markets', 'Residential & Commercial'],
+  { value: '1997', label: 'Since', description: 'Serving Carroll County' },
+  { value: '24/7', label: 'Support', description: 'Emergency Service Available' },
+  { value: '100%', label: 'Coverage', description: 'All Makes & Models Serviced' },
+  { value: '2', label: 'Markets', description: 'Residential & Commercial' },
 ]
 
 const serviceCards = [
@@ -74,11 +74,11 @@ export default function HomePage() {
 
       <section className="border-t border-white/10 bg-primary py-8">
         <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 px-6 text-center md:grid-cols-4">
-          {trustItems.map(([number, label, description]) => (
-            <div key={description} className="px-4 py-3">
-              <p className="text-2xl font-bold text-accent">{number}</p>
-              <p className="text-sm uppercase tracking-wide text-white">{label}</p>
-              <p className="text-sm text-white/60">{description}</p>
+          {trustItems.map((item) => (
+            <div key={item.description} className="px-4 py-3">
+              <p className="text-2xl font-bold text-accent">{item.value}</p>
+              <p className="text-sm uppercase tracking-wide text-white">{item.label}</p>
+              <p className="text-sm text-white/60">{item.description}</p>
             </div>
           ))}
         </div>
