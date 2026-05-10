@@ -1,7 +1,11 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './pages/**/*.{ts,tsx}'],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -12,8 +16,8 @@ const config: Config = {
         muted: '#6B7280',
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'sans-serif'],
-        display: ['var(--font-dm-serif-display)', 'serif'],
+        sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Georgia', 'Times New Roman', 'serif'],
       },
       maxWidth: {
         '7xl': '80rem',
