@@ -2,6 +2,7 @@ export const siteConfig = {
   name: 'JEM Heating and Air Conditioning, Inc.',
   shortName: 'JEM Heating & Air Conditioning',
   url: 'https://www.jemhvac.com',
+  phone: '1-888-684-0657',
   phoneTollFree: '1-888-684-0657',
   phoneLocal: '410-840-9328',
   email: 'contact@4jem.com',

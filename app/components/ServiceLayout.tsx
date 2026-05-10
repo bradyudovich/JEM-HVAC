@@ -29,6 +29,12 @@ export function ServiceLayout({ children, title, subtitle }: ServiceLayoutProps)
           <aside className="lg:sticky lg:top-24 h-fit rounded-2xl bg-white p-6 shadow-md">
             <h2 className="font-display text-2xl">Service Pages</h2>
             <nav className="mt-4 space-y-2" aria-label="Service pages">
+              <Link
+                href="/services"
+                className="block rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-surface hover:text-accent"
+              >
+                Services Overview
+              </Link>
               {serviceLinks.map((service) => (
                 <Link
                   key={service.href}
