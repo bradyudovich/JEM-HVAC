@@ -1,32 +1,32 @@
 import type { Metadata } from 'next'
 import { siteConfig } from '@/app/lib/site-config'
 
-type CreatePageMetadataOptions = {
-  title: string
+type PageMetadataInput = {
+  pageName: string
   description: string
   path: string
-  openGraphType?: 'website' | 'article'
 }
 
 export function createPageMetadata({
-  title,
+  pageName,
   description,
   path,
-  openGraphType = 'website',
-}: CreatePageMetadataOptions): Metadata {
+}: PageMetadataInput): Metadata {
   const canonicalPath = path.startsWith('/') ? path : `/${path}`
+  const title = `${pageName} | JEM Heating & Air Conditioning — Westminster, MD`
 
   return {
-    title: `${title} | JEM Heating & Air Conditioning`,
+    title,
     description,
     alternates: {
       canonical: canonicalPath,
     },
     openGraph: {
-      title: `${title} | JEM Heating & Air Conditioning`,
+      title,
       description,
-      type: openGraphType,
+      type: 'website',
       url: new URL(canonicalPath, siteConfig.url).toString(),
+      siteName: siteConfig.shortName,
     },
   }
 }

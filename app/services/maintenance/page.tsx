@@ -1,220 +1,75 @@
-import { ServiceLayout } from '@/app/components/ServiceLayout'
 import { createPageMetadata } from '@/app/lib/metadata'
+import { ServiceLayout } from '@/app/components/ServiceLayout'
 
 export const metadata = createPageMetadata({
-  title: 'Maintenance Contracts',
+  pageName: 'Maintenance Contract',
   description:
-    'Request Westminster MD HVAC maintenance contracts for residential or commercial systems, with seasonal tune-ups and preventive service for heating and cooling.',
+    'Request residential or commercial preventive HVAC maintenance contracts with annual, semi-annual, or quarterly schedules.',
   path: '/services/maintenance',
 })
 
-const fuelTypes = ['Gas', 'Oil', 'Electric', 'Uncertain']
-const appliances = [
-  'Furnace',
-  'Boiler',
-  'Heat Pump',
-  'Air Conditioner',
-  'Packaged Unit',
-  'Uncertain',
-]
+const fuels = ['Gas', 'Oil', 'Electric', 'Uncertain']
+const appliances = ['Furnace', 'Boiler', 'Heat Pump', 'Air Conditioner', 'Packaged Unit', 'Uncertain']
 const blowerLocations = ['Attic', 'Rooftop', 'Closet', 'Mechanical Room', 'Basement']
-const serviceFrequencies = ['Annual', 'Semi-Annual', 'Quarterly']
-const additionalAppliances = [
-  'Humidifier',
-  'Media Air Cleaner',
-  'Electronic Air Cleaner',
-  'Ventilator',
-  'Disposable Filter',
-  'Washable Filter',
-  'Economizer',
-]
-
-function CheckboxGrid({ items, name }: { items: string[]; name: string }) {
-  return (
-    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-      {items.map((item) => (
-        <label
-          key={item}
-          className="flex cursor-pointer items-center gap-3 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm font-medium text-primary transition-colors has-[:checked]:border-accent has-[:checked]:bg-accent/10"
-        >
-          <input type="checkbox" name={name} value={item} className="h-4 w-4 accent-[#B45309]" />
-          <span>{item}</span>
-        </label>
-      ))}
-    </div>
-  )
-}
-
-function RadioGrid({ items, name }: { items: string[]; name: string }) {
-  return (
-    <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-      {items.map((item) => (
-        <label
-          key={item}
-          className="flex cursor-pointer items-center gap-3 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm font-medium text-primary transition-colors has-[:checked]:border-accent has-[:checked]:bg-accent/10"
-        >
-          <input type="radio" name={name} value={item} className="h-4 w-4 accent-[#B45309]" />
-          <span>{item}</span>
-        </label>
-      ))}
-    </div>
-  )
-}
+const frequencies = ['Annual', 'Semi-Annual', 'Quarterly']
+const additional = ['Humidifier', 'Media Air Cleaner', 'Electronic Air Cleaner', 'Ventilator', 'Disposable Filter', 'Washable Filter', 'Economizer']
 
 export default function MaintenancePage() {
   return (
     <ServiceLayout
-      title="Maintenance Contracts"
-      intro="Think about how you take care of your car. To keep your car operating at its best, you need an occasional tune-up from a trained professional. Your heating and cooling system is no different. To get the most performance and longest life from your system, have a professional perform routine checks in the spring and fall."
+      title="Maintenance Contract"
+      subtitle="Think about how you take care of your car. To keep it operating at its best, you need an occasional tune-up from a trained professional. Your heating and cooling system is no different."
     >
-      <form className="space-y-8 rounded-3xl bg-white p-8 shadow-soft animate-fade-up">
-        <section className="rounded-3xl bg-surface p-6">
-          <h2 className="font-display text-3xl text-primary">Agreement Type</h2>
-          <div className="mt-6">
-            <RadioGrid items={['Commercial', 'Residential']} name="agreementType" />
+      <form className="rounded-2xl shadow-md bg-white p-6 space-y-6">
+        <fieldset>
+          <legend className="font-display text-2xl">Commercial or Residential</legend>
+          <div className="mt-3 flex gap-6">
+            <label><input type="radio" name="property" value="commercial" className="mr-2" />Commercial</label>
+            <label><input type="radio" name="property" value="residential" className="mr-2" />Residential</label>
           </div>
-        </section>
+        </fieldset>
 
-        <section className="rounded-3xl bg-surface p-6">
-          <h2 className="font-display text-3xl text-primary">Equipment Details</h2>
+        <fieldset>
+          <legend className="font-semibold">Fuel type</legend>
+          <div className="mt-2 grid sm:grid-cols-2 gap-2">{fuels.map((item) => <label key={item}><input type="checkbox" name="fuelType" value={item} className="mr-2" />{item}</label>)}</div>
+        </fieldset>
 
-          <div className="mt-6 space-y-6">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Fuel Type</p>
-              <div className="mt-4">
-                <CheckboxGrid items={fuelTypes} name="fuelType" />
-              </div>
-            </div>
+        <fieldset>
+          <legend className="font-semibold">Appliances</legend>
+          <div className="mt-2 grid sm:grid-cols-2 gap-2">{appliances.map((item) => <label key={item}><input type="checkbox" name="appliances" value={item} className="mr-2" />{item}</label>)}</div>
+        </fieldset>
 
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Appliances</p>
-              <div className="mt-4">
-                <CheckboxGrid items={appliances} name="appliances" />
-              </div>
-            </div>
+        <fieldset>
+          <legend className="font-semibold">Blower location</legend>
+          <div className="mt-2 grid sm:grid-cols-2 gap-2">{blowerLocations.map((item) => <label key={item}><input type="checkbox" name="blowerLocation" value={item} className="mr-2" />{item}</label>)}</div>
+        </fieldset>
 
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Blower Location</p>
-              <div className="mt-4">
-                <CheckboxGrid items={blowerLocations} name="blowerLocation" />
-              </div>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2">
-              <label className="block">
-                <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">
-                  Total Thermostats / Systems
-                </span>
-                <input
-                  type="number"
-                  min="0"
-                  name="systemCount"
-                  className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-                />
-              </label>
-
-              <label className="block">
-                <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Zip Code</span>
-                <input
-                  type="text"
-                  name="zipCode"
-                  className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-                />
-              </label>
-            </div>
-
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Service Frequency</p>
-              <div className="mt-4">
-                <RadioGrid items={serviceFrequencies} name="serviceFrequency" />
-              </div>
-            </div>
-
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Additional Appliances</p>
-              <div className="mt-4">
-                <CheckboxGrid items={additionalAppliances} name="additionalAppliances" />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="rounded-3xl bg-surface p-6">
-          <h2 className="font-display text-3xl text-primary">Contact Information</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <label className="block md:col-span-2">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Name</span>
-              <input
-                type="text"
-                name="name"
-                className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-              />
-            </label>
-
-            <label className="block md:col-span-2">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Address</span>
-              <input
-                type="text"
-                name="address"
-                className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-              />
-            </label>
-
-            <label className="block">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">City</span>
-              <input
-                type="text"
-                name="city"
-                className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-              />
-            </label>
-
-            <label className="block">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">State</span>
-              <input
-                type="text"
-                name="state"
-                className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-              />
-            </label>
-
-            <label className="block">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Zip</span>
-              <input
-                type="text"
-                name="contactZip"
-                className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-              />
-            </label>
-
-            <label className="block">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Phone</span>
-              <input
-                type="tel"
-                name="phone"
-                className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-              />
-            </label>
-
-            <label className="block md:col-span-2">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-accent">Email</span>
-              <input
-                type="email"
-                name="email"
-                className="mt-3 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-primary outline-none transition focus:border-accent"
-              />
-            </label>
-          </div>
-        </section>
-
-        <div className="flex justify-start">
-          <button
-            type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-accent px-7 py-4 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary"
-          >
-            Submit Inquiry
-          </button>
+        <div className="grid md:grid-cols-2 gap-4">
+          <label className="block">Total thermostats/systems<input type="number" min="0" name="systemCount" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label className="block">Zip code<input type="text" name="zipCode" className="mt-1 w-full rounded-xl border p-2" /></label>
         </div>
+
+        <fieldset>
+          <legend className="font-semibold">Service frequency</legend>
+          <div className="mt-2 flex flex-wrap gap-4">{frequencies.map((item) => <label key={item}><input type="radio" name="frequency" value={item} className="mr-2" />{item}</label>)}</div>
+        </fieldset>
+
+        <fieldset>
+          <legend className="font-semibold">Additional appliances</legend>
+          <div className="mt-2 grid sm:grid-cols-2 gap-2">{additional.map((item) => <label key={item}><input type="checkbox" name="additionalAppliances" value={item} className="mr-2" />{item}</label>)}</div>
+        </fieldset>
+
+        <div className="grid md:grid-cols-2 gap-4">
+          <label>Name<input type="text" name="name" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>Address<input type="text" name="address" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>City<input type="text" name="city" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>State<input type="text" name="state" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>Zip<input type="text" name="zip" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label>Phone<input type="tel" name="phone" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label className="md:col-span-2">Email<input type="email" name="email" className="mt-1 w-full rounded-xl border p-2" /></label>
+        </div>
+
+        <button type="submit" className="rounded-full bg-accent px-6 py-3 text-white font-semibold">Submit</button>
       </form>
     </ServiceLayout>
   )

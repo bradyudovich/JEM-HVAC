@@ -2,9 +2,9 @@ import { createPageMetadata } from '@/app/lib/metadata'
 import { ContactPageClient } from '@/app/contact/ContactPageClient'
 
 export const metadata = createPageMetadata({
-  title: 'Contact',
+  pageName: 'Contact',
   description:
-    'Contact our Westminster MD HVAC team for heating and air conditioning repair, maintenance, and installation. Call or message JEM for fast comfort service.',
+    'Contact JEM Heating and Air Conditioning for service scheduling, emergency HVAC support, and maintenance inquiries.',
   path: '/contact',
 })
 
