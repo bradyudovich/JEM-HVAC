@@ -21,39 +21,35 @@ A Next.js website for JEM Heating & Air Conditioning, prepared for local develop
    ```bash
    npm install
    ```
-3. Copy environment variables and fill them in as needed:
-   ```bash
-   cp .env.local.example .env.local
-   ```
-4. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
-5. Open http://localhost:3000 in your browser.
+4. Open http://localhost:3000 in your browser.
+
+The current site does not require any environment variables for local development. If you plan to wire up future form handling, you can optionally copy `.env.local.example` to `.env.local`.
 
 ## Deployment
 
-### GitHub Pages (configured in-repo)
-
-This repo now includes a Pages workflow at `.github/workflows/deploy-pages.yml` that builds and deploys the Next.js site artifact from `main`.
-
-1. In **GitHub → Settings → Pages**, set **Source** to **GitHub Actions**.
-2. Push to `main` (or trigger the workflow manually from Actions).
-3. The workflow builds the Next.js app and deploys the exported `out/` directory.
-
-### Vercel (optional alternative)
+### Vercel (primary)
 
 1. Push the project to GitHub.
 2. In Vercel, click **Add New Project** and import `bradyudovich/JEM-HVAC`.
-3. Vercel will detect Next.js automatically.
-4. Add the required environment variables in the Vercel project settings.
-5. Deploy.
+3. Vercel will detect Next.js automatically from `vercel.json`.
+4. Leave the framework preset as **Next.js** and use the default commands:
+   - Install: `npm install`
+   - Build: `npm run build`
+   - Start: `npm run start`
+5. Add any optional environment variables you need for future integrations.
+6. Deploy.
+
+This repository is configured to run as a standard Next.js application on Vercel. It is no longer set up for a GitHub Pages static export.
 
 ## Environment Variables
 
-Create a `.env.local` file locally and configure the same values in Vercel:
+No environment variables are required for the current site build. The example file contains placeholders for future integrations:
 
-- `NEXT_PUBLIC_SITE_URL` — public site URL for canonical links and client-side references
+- `NEXT_PUBLIC_SITE_URL` — optional public site URL override if deployment metadata is later made environment-driven
 - `CONTACT_FORM_EMAIL` — destination email address for future contact form wiring
 - `RESEND_API_KEY` — API key for Resend if email sending is implemented
 - `FORMSPREE_ENDPOINT` — optional alternative to Resend for form submissions
@@ -76,5 +72,6 @@ Add or expand route segments inside `app/` as the site grows, such as:
 ## Notes
 
 - `vercel.json` is configured with the Next.js framework preset.
+- `package.json` scripts already match the standard Vercel Next.js workflow: `dev`, `build`, `start`, and `lint`.
 - No custom rewrites are required because routing is handled by the Next.js App Router.
-- This project is ready for GitHub push and Vercel deployment.
+- This project is ready for GitHub push and Vercel deployment as a standard Next.js app.
