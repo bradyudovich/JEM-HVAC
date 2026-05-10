@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { createPageMetadata } from '@/app/lib/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'Indoor Air Quality',
+  description:
+    'Improve comfort with Westminster MD HVAC indoor air quality services, including air cleaners, humidifiers, and ventilation for healthier heating and cooling.',
+  path: '/indoor-air-quality',
+})
 
 const products = [
   {

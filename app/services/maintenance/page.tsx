@@ -1,4 +1,12 @@
 import { ServiceLayout } from '@/app/components/ServiceLayout'
+import { createPageMetadata } from '@/app/lib/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'Maintenance Contracts',
+  description:
+    'Request Westminster MD HVAC maintenance contracts for residential or commercial systems, with seasonal tune-ups and preventive service for heating and cooling.',
+  path: '/services/maintenance',
+})
 
 const fuelTypes = ['Gas', 'Oil', 'Electric', 'Uncertain']
 const appliances = [
@@ -29,7 +37,7 @@ function CheckboxGrid({ items, name }: { items: string[]; name: string }) {
           key={item}
           className="flex cursor-pointer items-center gap-3 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm font-medium text-primary transition-colors has-[:checked]:border-accent has-[:checked]:bg-accent/10"
         >
-          <input type="checkbox" name={name} value={item} className="h-4 w-4 accent-[#E8720C]" />
+          <input type="checkbox" name={name} value={item} className="h-4 w-4 accent-[#B45309]" />
           <span>{item}</span>
         </label>
       ))}
@@ -45,7 +53,7 @@ function RadioGrid({ items, name }: { items: string[]; name: string }) {
           key={item}
           className="flex cursor-pointer items-center gap-3 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm font-medium text-primary transition-colors has-[:checked]:border-accent has-[:checked]:bg-accent/10"
         >
-          <input type="radio" name={name} value={item} className="h-4 w-4 accent-[#E8720C]" />
+          <input type="radio" name={name} value={item} className="h-4 w-4 accent-[#B45309]" />
           <span>{item}</span>
         </label>
       ))}

@@ -1,4 +1,12 @@
 import Link from 'next/link'
+import { createPageMetadata } from '@/app/lib/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'York Extended Warranty',
+  description:
+    'Review York extended warranty details from your Westminster MD HVAC dealer, including terms, acceptance steps, and support for heating and cooling equipment.',
+  path: '/york-warranty',
+})
 
 export default function YorkWarrantyPage() {
   return (
@@ -66,7 +74,7 @@ export default function YorkWarrantyPage() {
               <input
                 type="checkbox"
                 name="acceptTerms"
-                className="mt-1 h-4 w-4 accent-[#E8720C]"
+                className="mt-1 h-4 w-4 accent-[#B45309]"
               />
               <span className="font-medium">
                 I have read and accept the terms and conditions outlined in the York Comfort Plan Warranty Agreement.

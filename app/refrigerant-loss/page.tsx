@@ -1,4 +1,12 @@
 import Link from 'next/link'
+import { createPageMetadata } from '@/app/lib/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'Refrigerant Loss',
+  description:
+    'Read Westminster MD HVAC guidance on refrigerant loss, leak detection, and repair options to protect air conditioning performance, efficiency, and reliability.',
+  path: '/refrigerant-loss',
+})
 
 const sections = [
   {

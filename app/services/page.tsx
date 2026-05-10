@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import { ServiceLayout } from '@/app/components/ServiceLayout'
+import { createPageMetadata } from '@/app/lib/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'Services',
+  description:
+    'Explore Westminster MD HVAC services from JEM, including heating and air conditioning repair, replacement, maintenance agreements, and indoor comfort solutions.',
+  path: '/services',
+})
 
 const cards = [
   {

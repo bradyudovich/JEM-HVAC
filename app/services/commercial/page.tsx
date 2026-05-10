@@ -1,4 +1,12 @@
 import { ServiceLayout } from '@/app/components/ServiceLayout'
+import { createPageMetadata } from '@/app/lib/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'Commercial Services',
+  description:
+    'Westminster MD commercial HVAC services for rooftop units, heating and cooling repair, replacement, and preventive maintenance to keep business systems running.',
+  path: '/services/commercial',
+})
 
 const commercialEquipment = [
   'Air Conditioning',
