@@ -45,7 +45,7 @@ export default function MaintenancePage() {
         </fieldset>
 
         <div className="grid md:grid-cols-2 gap-4">
-          <label className="block">Total thermostats/systems<input type="number" name="systemCount" className="mt-1 w-full rounded-xl border p-2" /></label>
+          <label className="block">Total thermostats/systems<input type="number" min="0" name="systemCount" className="mt-1 w-full rounded-xl border p-2" /></label>
           <label className="block">Zip code<input type="text" name="zipCode" className="mt-1 w-full rounded-xl border p-2" /></label>
         </div>
 
