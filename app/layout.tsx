@@ -1,20 +1,8 @@
 import type { Metadata, Viewport } from 'next'
-import { DM_Serif_Display, Geist } from 'next/font/google'
 import './globals.css'
 import { Header } from '@/app/components/Header'
 import { Footer } from '@/app/components/Footer'
 import { siteConfig } from '@/app/lib/site-config'
-
-const geist = Geist({
-  subsets: ['latin'],
-  variable: '--font-geist-sans',
-})
-
-const dmSerif = DM_Serif_Display({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-dm-serif-display',
-})
 
 export const metadata: Metadata = {
   title: 'JEM Heating & Air Conditioning — Westminster, MD',
@@ -37,7 +25,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geist.variable} ${dmSerif.variable}`}>
+    <html lang="en">
       <body className="font-sans bg-surface text-text antialiased">
         <a
           href="#main-content"
