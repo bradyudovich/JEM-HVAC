@@ -41,19 +41,23 @@ export default function IndoorAirQualityPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Indoor Air Quality' }]}
       />
 
-      <section className="py-12 md:py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="max-w-3xl text-muted">
+      <section className="bg-white py-12 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Indoor Air Quality</p>
+          <h2 className="mb-4 text-4xl font-display font-bold text-primary">Cleaner, Healthier Indoor Air</h2>
+          <p>
             Indoor air quality can impact respiratory health, comfort, and HVAC performance. JEM
             offers proven IAQ solutions to help remove contaminants and balance humidity.
           </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
             {cards.map((card) => (
-              <article key={card.title} className="rounded-2xl shadow-md bg-white p-6">
-                <p className="text-accent text-2xl" aria-hidden="true">✦</p>
-                <h2 className="mt-2 font-display text-2xl">{card.title}</h2>
-                <p className="mt-3 text-muted">{card.description}</p>
+              <article key={card.title} className="rounded-2xl border-t-4 border-accent bg-surface p-8 shadow-md hover:shadow-xl">
+                <p className="mb-4 text-3xl text-accent" aria-hidden="true">
+                  💨
+                </p>
+                <h3 className="mb-2 text-xl font-display font-bold text-primary">{card.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{card.description}</p>
               </article>
             ))}
           </div>

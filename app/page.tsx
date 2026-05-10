@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { createPageMetadata } from '@/app/lib/metadata'
 import { testimonials } from '@/app/lib/testimonials'
 import { CTABanner } from '@/app/components/CTABanner'
@@ -13,24 +12,27 @@ export const metadata = createPageMetadata({
 })
 
 const trustItems = [
-  ['Since 1997', 'In Business'],
-  ['Residential & Commercial', 'Service'],
-  ['All Makes & Models', 'Serviced'],
-  ['Emergency Service', 'Available'],
+  ['1997', 'Since', 'Serving Carroll County'],
+  ['24/7', 'Support', 'Emergency Service Available'],
+  ['100%', 'Coverage', 'All Makes & Models Serviced'],
+  ['2', 'Markets', 'Residential & Commercial'],
 ]
 
 const serviceCards = [
   {
+    icon: '🏠',
     title: 'Residential HVAC',
     description: 'Repair, replacement, and system upgrades for total home comfort.',
     href: '/services/residential',
   },
   {
+    icon: '🏢',
     title: 'Commercial HVAC',
     description: 'Responsive maintenance and repair for business-critical systems.',
     href: '/services/commercial',
   },
   {
+    icon: '💨',
     title: 'Indoor Air Quality',
     description: 'Filtration and purification options to improve indoor health and comfort.',
     href: '/indoor-air-quality',
@@ -40,58 +42,66 @@ const serviceCards = [
 export default function HomePage() {
   return (
     <>
-      <section className="relative min-h-screen bg-gradient-to-b from-primary via-[#14233C] to-primary text-white flex items-center">
-        <div className="max-w-7xl mx-auto px-6 py-24 w-full">
-          <h1 className="font-display text-white text-4xl sm:text-6xl max-w-4xl">
+      <section className="min-h-screen bg-primary px-6 text-center text-white flex items-center justify-center">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent">Carroll County, Maryland</p>
+          <h1 className="mb-6 text-6xl font-display font-bold leading-tight text-white md:text-7xl">
             Carroll County&apos;s Trusted HVAC Experts Since 1997
           </h1>
-          <p className="mt-6 max-w-3xl text-white/85 text-lg">
+          <p className="mx-auto mb-10 max-w-2xl text-xl text-white/70">
             Professional heating &amp; cooling service, fast response times, and honest pricing for
             residential and commercial clients.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="rounded-full bg-accent px-7 py-3 font-semibold text-white hover:opacity-90"
+              className="rounded-full bg-accent px-10 py-4 font-semibold text-white hover:bg-orange-600"
             >
               Request Service
             </Link>
             <Link
               href="/services"
-              className="rounded-full border border-white px-7 py-3 font-semibold text-white hover:bg-white hover:text-primary"
+              className="rounded-full border-2 border-white px-10 py-4 font-semibold text-white hover:bg-white hover:text-primary"
             >
               View Services
             </Link>
           </div>
-        </div>
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce text-white" aria-hidden="true">
-          ↓
+          <div className="mt-16 text-3xl text-white/40 animate-bounce" aria-hidden="true">
+            ↓
+          </div>
         </div>
       </section>
 
-      <section className="bg-primary text-white">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-white/20">
-          {trustItems.map(([title, subtitle]) => (
-            <div key={title} className="py-6 px-4 text-center">
-              <p className="font-semibold">{title}</p>
-              <p className="text-sm uppercase tracking-wider text-white/75">{subtitle}</p>
+      <section className="border-t border-white/10 bg-primary py-8">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-white/10 px-6 text-center md:grid-cols-4">
+          {trustItems.map(([number, label, description]) => (
+            <div key={description} className="px-4 py-3">
+              <p className="text-2xl font-bold text-accent">{number}</p>
+              <p className="text-sm uppercase tracking-wide text-white">{label}</p>
+              <p className="text-sm text-white/60">{description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="py-12 md:py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-center font-display text-4xl">What We Do</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <section className="bg-surface py-12 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-2 text-center text-sm font-semibold uppercase tracking-widest text-accent">Services</p>
+          <h2 className="mb-4 text-center text-4xl font-display font-bold text-primary">What We Do</h2>
+          <div className="mx-auto mb-12 h-1 w-16 bg-accent" />
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {serviceCards.map((card) => (
               <article
                 key={card.title}
-                className="rounded-2xl shadow-md bg-white border-t-4 border-accent p-6 transition hover:-translate-y-1 hover:shadow-lg"
+                className="rounded-2xl border-t-4 border-accent bg-white p-8 shadow-md hover:shadow-xl"
               >
-                <h3 className="font-display text-2xl">{card.title}</h3>
-                <p className="mt-3 text-muted">{card.description}</p>
-                <Link href={card.href} className="mt-4 inline-block font-semibold text-accent hover:text-primary">
+                <p className="mb-4 text-3xl text-accent" aria-hidden="true">
+                  {card.icon}
+                </p>
+                <h3 className="mb-2 text-xl font-display font-bold text-primary">{card.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{card.description}</p>
+                <Link href={card.href} className="mt-4 inline-block text-sm font-semibold text-accent hover:underline">
                   Learn More
                 </Link>
               </article>
@@ -100,41 +110,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-12 md:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid gap-8 lg:grid-cols-2 items-center">
+      <section className="bg-white py-12 md:py-20">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 md:grid-cols-2">
+          <div className="flex h-80 w-full items-center justify-center rounded-2xl bg-gray-200 text-lg text-gray-400">
+            Team Photo Placeholder
+          </div>
           <div>
-            <h2 className="font-display text-4xl">Built From the Ground Up</h2>
-            <p className="mt-4 text-muted">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">About JEM</p>
+            <h2 className="mb-4 text-4xl font-display font-bold text-primary">Built From the Ground Up</h2>
+            <p>
               JEM was founded on February 19, 1997 — armed with only a pickup truck, a handful of
               tools, and a dream. While we&apos;ve grown over the years, our commitment to quality
               craftsmanship, prompt service, and honest prices has never changed.
             </p>
-            <Link href="/about" className="mt-4 inline-block font-semibold text-accent hover:text-primary">
+            <Link href="/about" className="mt-4 inline-block font-medium text-accent hover:underline">
               Our Story →
             </Link>
-          </div>
-          <div className="rounded-2xl shadow-md bg-surface overflow-hidden">
-            <Image
-              src="/images/placeholder.svg"
-              alt="JEM Heating and Air Conditioning team at work"
-              width={1200}
-              height={800}
-              className="w-full h-auto"
-            />
           </div>
         </div>
       </section>
 
-      <section className="py-12 md:py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-center font-display text-4xl">What Our Customers Say</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <section className="bg-surface py-12 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-2 text-center text-sm font-semibold uppercase tracking-widest text-accent">Testimonials</p>
+          <h2 className="mb-4 text-center text-4xl font-display font-bold text-primary">What Our Customers Say</h2>
+          <div className="mx-auto mb-12 h-1 w-16 bg-accent" />
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {testimonials.slice(0, 3).map((testimonial) => (
               <TestimonialCard key={testimonial.name} {...testimonial} />
             ))}
           </div>
           <div className="mt-6 text-center">
-            <Link href="/testimonials" className="font-semibold text-accent hover:text-primary">
+            <Link href="/testimonials" className="font-medium text-accent hover:underline">
               See All Testimonials →
             </Link>
           </div>

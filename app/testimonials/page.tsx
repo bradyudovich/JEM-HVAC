@@ -19,11 +19,15 @@ export default function TestimonialsPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Testimonials' }]}
       />
 
-      <section className="py-12 md:py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <TestimonialCard key={testimonial.name} {...testimonial} />
-          ))}
+      <section className="bg-surface py-12 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Testimonials</p>
+          <h2 className="mb-4 text-4xl font-display font-bold text-primary">Customer Reviews</h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((testimonial) => (
+              <TestimonialCard key={testimonial.name} {...testimonial} />
+            ))}
+          </div>
         </div>
       </section>
 

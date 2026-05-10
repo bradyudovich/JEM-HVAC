@@ -23,24 +23,19 @@ export function ServiceLayout({ children, title, subtitle }: ServiceLayoutProps)
         ]}
       />
 
-      <section className="bg-surface py-12 md:py-20">
-        <div className="max-w-7xl mx-auto px-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+      <section className="bg-white py-12 md:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[minmax(0,1fr)_320px]">
           <div className="space-y-8">{children}</div>
-          <aside className="lg:sticky lg:top-24 h-fit rounded-2xl bg-white p-6 shadow-md">
-            <h2 className="font-display text-2xl">Service Pages</h2>
-            <nav className="mt-4 space-y-2" aria-label="Service pages">
-              <Link
-                href="/services"
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-surface hover:text-accent"
-              >
+          <aside className="h-fit rounded-2xl bg-surface p-8 shadow-md lg:sticky lg:top-28">
+            <h2 className="mb-4 border-t-4 border-accent pt-4 text-xl font-display font-bold text-primary">
+              Service Pages
+            </h2>
+            <nav className="space-y-2" aria-label="Service pages">
+              <Link href="/services" className="block text-sm font-medium text-accent hover:underline">
                 Services Overview
               </Link>
               {serviceLinks.map((service) => (
-                <Link
-                  key={service.href}
-                  href={service.href}
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-primary hover:bg-surface hover:text-accent"
-                >
+                <Link key={service.href} href={service.href} className="block text-sm font-medium text-accent hover:underline">
                   {service.label}
                 </Link>
               ))}
