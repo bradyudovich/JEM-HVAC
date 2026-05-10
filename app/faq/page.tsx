@@ -19,10 +19,10 @@ export default function FAQPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]}
       />
 
-      <section className="bg-white py-12 md:py-20">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="bg-white px-4 py-12 md:px-6 md:py-20">
+        <div className="mx-auto max-w-7xl">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">FAQ</p>
-          <h2 className="mb-4 text-4xl font-display font-bold text-primary">Answers to Common Questions</h2>
+          <h2 className="mb-4 text-2xl font-display font-bold text-primary md:text-4xl">Answers to Common Questions</h2>
           <div className="max-w-4xl">
             <FAQAccordion items={faqs} />
           </div>

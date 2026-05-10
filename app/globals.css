@@ -31,7 +31,7 @@ p {
 }
 
 a {
-  @apply transition-all duration-200;
+  @apply cursor-pointer transition-all duration-200;
 }
 
 button,
@@ -39,4 +39,8 @@ input,
 textarea,
 select {
   @apply transition-all duration-200;
+}
+
+button {
+  @apply cursor-pointer;
 }

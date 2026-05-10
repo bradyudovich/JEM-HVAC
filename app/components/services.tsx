@@ -25,7 +25,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="bg-surface py-12 md:py-20">
+    <section id="services" className="bg-surface px-4 py-12 md:px-6 md:py-20">
       <Container>
         <div className="space-y-12">
           <SectionHeading
@@ -34,10 +34,10 @@ export function Services() {
             description="From urgent repairs to complete system replacements, we deliver practical solutions tailored to your property and budget."
           />
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">
             {services.map((service) => (
-              <article key={service.title} className="rounded-2xl border-t-4 border-accent bg-white p-8 shadow-md hover:shadow-xl">
-                <h3 className="mb-2 text-xl font-display font-bold text-primary">{service.title}</h3>
+              <article key={service.title} className="rounded-2xl border-t-4 border-accent bg-white p-6 shadow-md hover:shadow-xl md:p-8">
+                <h3 className="mb-2 text-lg font-display font-bold text-primary md:text-xl">{service.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">{service.description}</p>
               </article>
             ))}

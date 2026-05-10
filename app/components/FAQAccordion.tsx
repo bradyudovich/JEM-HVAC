@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Minus, Plus } from 'lucide-react'
 import type { FAQItem } from '@/app/lib/faqs'
 
 type FAQAccordionProps = {
@@ -18,7 +19,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
         const panelId = `faq-panel-${index}`
 
         return (
-          <div key={item.q} className="mb-3 overflow-hidden rounded-xl bg-white shadow-sm">
+          <div key={item.q} className="mb-3 w-full overflow-hidden rounded-xl bg-white shadow-sm">
             <h2>
               <button
                 id={buttonId}
@@ -46,12 +47,14 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
                     document.getElementById(`faq-button-${items.length - 1}`)?.focus()
                   }
                 }}
-                className="flex w-full cursor-pointer items-center justify-between px-6 py-5 text-left hover:bg-gray-50"
+                className="flex w-full min-h-[44px] min-w-[44px] items-center justify-between px-4 py-4 text-left hover:bg-gray-50 focus-visible:bg-gray-50 md:px-6 md:py-5"
               >
-                <span className="font-semibold text-primary">{item.q}</span>
-                <span aria-hidden="true" className="text-xl font-bold text-accent">
-                  {isOpen ? '−' : '+'}
-                </span>
+                <span className="text-sm font-semibold text-primary md:text-base">{item.q}</span>
+                {isOpen ? (
+                  <Minus aria-hidden="true" className="h-5 w-5 text-accent" />
+                ) : (
+                  <Plus aria-hidden="true" className="h-5 w-5 text-accent" />
+                )}
               </button>
             </h2>
 
@@ -59,8 +62,8 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               id={panelId}
               role="region"
               aria-labelledby={buttonId}
-              className={`grid border-t border-gray-100 px-6 transition-all duration-200 ${
-                isOpen ? 'grid-rows-[1fr] pb-5' : 'grid-rows-[0fr] pb-0'
+              className={`grid border-t border-gray-100 px-4 transition-all duration-200 md:px-6 ${
+                isOpen ? 'grid-rows-[1fr] pb-4 md:pb-5' : 'grid-rows-[0fr] pb-0'
               }`}
             >
               <div className="overflow-hidden">

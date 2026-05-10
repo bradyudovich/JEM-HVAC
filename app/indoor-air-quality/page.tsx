@@ -1,3 +1,4 @@
+import { Wind } from 'lucide-react'
 import { createPageMetadata } from '@/app/lib/metadata'
 import { PageHero } from '@/app/components/PageHero'
 import { CTABanner } from '@/app/components/CTABanner'
@@ -41,22 +42,20 @@ export default function IndoorAirQualityPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Indoor Air Quality' }]}
       />
 
-      <section className="bg-white py-12 md:py-20">
-        <div className="mx-auto max-w-7xl px-6">
+      <section className="bg-white px-4 py-12 md:px-6 md:py-20">
+        <div className="mx-auto max-w-7xl">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Indoor Air Quality</p>
-          <h2 className="mb-4 text-4xl font-display font-bold text-primary">Cleaner, Healthier Indoor Air</h2>
+          <h2 className="mb-4 text-2xl font-display font-bold text-primary md:text-4xl">Cleaner, Healthier Indoor Air</h2>
           <p>
             Indoor air quality can impact respiratory health, comfort, and HVAC performance. JEM
             offers proven IAQ solutions to help remove contaminants and balance humidity.
           </p>
 
-          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-8">
             {cards.map((card) => (
-              <article key={card.title} className="rounded-2xl border-t-4 border-accent bg-surface p-8 shadow-md hover:shadow-xl">
-                <p className="mb-4 text-3xl text-accent" aria-hidden="true">
-                  💨
-                </p>
-                <h3 className="mb-2 text-xl font-display font-bold text-primary">{card.title}</h3>
+              <article key={card.title} className="rounded-2xl border-t-4 border-accent bg-surface p-6 shadow-md hover:shadow-xl md:p-8">
+                <Wind className="mb-4 h-5 w-5 text-accent" aria-hidden="true" />
+                <h3 className="mb-2 text-lg font-display font-bold text-primary md:text-xl">{card.title}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">{card.description}</p>
               </article>
             ))}
