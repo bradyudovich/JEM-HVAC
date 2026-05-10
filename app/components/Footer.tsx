@@ -1,90 +1,60 @@
 import Link from 'next/link'
+import { navLinks } from '@/app/lib/services'
 
-const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
-  { label: 'Indoor Air Quality', href: '/indoor-air-quality' },
-  { label: 'Testimonials', href: '/testimonials' },
-  { label: 'FAQ', href: '/faq' },
-  { label: 'Contact', href: '/contact' },
-]
+function Icon({ children }: { children: React.ReactNode }) {
+  return <span className="mt-1 inline-flex h-5 w-5 text-accent">{children}</span>
+}
 
 export function Footer() {
   return (
     <footer className="bg-primary text-white">
-      <div className="mx-auto w-full max-w-[90rem] px-6 py-16 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_1fr]">
-          <div className="space-y-5">
-            <div className="flex items-baseline gap-2">
-              <span className="font-display text-3xl text-accent">JEM</span>
-              <span className="text-sm font-medium uppercase tracking-[0.16em] text-white sm:text-base">
-                Heating & Air Conditioning
+      <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-3">
+        <div>
+          <h2 className="font-display text-2xl text-white">JEM Heating & Air Conditioning</h2>
+          <p className="mt-4 text-white/80">Quality • Integrity • Expediency</p>
+          <p className="mt-2 text-white/70">Serving Carroll County, MD since 1997.</p>
+        </div>
+
+        <div>
+          <h2 className="font-display text-2xl text-white">Quick Links</h2>
+          <ul className="mt-4 space-y-2">
+            {navLinks.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="text-white/80 hover:text-accent">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h2 className="font-display text-2xl text-white">Contact</h2>
+          <ul className="mt-4 space-y-3 text-white/80">
+            <li className="flex gap-2">
+              <Icon>☎</Icon>
+              <span>
+                <Link href="tel:1-888-684-0657" className="hover:text-accent">1-888-684-0657</Link> |{' '}
+                <Link href="tel:410-840-9328" className="hover:text-accent">410-840-9328</Link>
               </span>
-            </div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
-              Quality • Integrity • Expediency
-            </p>
-            <p className="max-w-md text-base text-white/75">
-              Serving Carroll County, MD and surrounding areas since 1997.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="font-display text-2xl text-white">Quick Links</h2>
-            <ul className="mt-5 space-y-3">
-              {quickLinks.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-white/80 transition-colors hover:text-accent"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="font-display text-2xl text-white">Contact</h2>
-            <div className="mt-5 space-y-3 text-white/80">
-              <p>
-                <span className="font-semibold text-white">Phone:</span>{' '}
-                <Link href="tel:1-888-684-0657" className="transition-colors hover:text-accent">
-                  1-888-684-0657
-                </Link>
-                {' / '}
-                <Link href="tel:410-840-9328" className="transition-colors hover:text-accent">
-                  410-840-9328
-                </Link>
-              </p>
-              <p>
-                <span className="font-semibold text-white">Email:</span>{' '}
-                <Link href="mailto:contact@4jem.com" className="transition-colors hover:text-accent">
-                  contact@4jem.com
-                </Link>
-              </p>
-              <p>
-                <span className="font-semibold text-white">Address:</span> 150 Airport Drive Unit 1,
-                Westminster, MD 21157
-              </p>
-              <div>
-                <p className="font-semibold text-white">Hours:</p>
-                <p>Mon–Fri 8AM–4:30PM</p>
-                <p>Sat–Sun Closed</p>
-                <p>Emergencies: Call for Service</p>
-              </div>
-            </div>
-          </div>
+            </li>
+            <li className="flex gap-2">
+              <Icon>✉</Icon>
+              <Link href="mailto:contact@4jem.com" className="hover:text-accent">contact@4jem.com</Link>
+            </li>
+            <li className="flex gap-2">
+              <Icon>📍</Icon>
+              <span>150 Airport Drive, Unit 1, Westminster, MD 21157</span>
+            </li>
+            <li className="flex gap-2">
+              <Icon>🕒</Icon>
+              <span>Mon–Fri 8:00AM–4:30PM | Sat–Sun: Closed | Emergencies: Call for Service</span>
+            </li>
+          </ul>
         </div>
-
-        <div className="mt-12 border-t border-white/10 pt-6 text-sm text-white/65">
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 JEM Heating and Air Conditioning, Inc. All rights reserved.</p>
-            <p>York Authorized Dealer</p>
-          </div>
-        </div>
+      </div>
+      <div className="border-t border-white/20 py-5 px-6 text-center text-sm text-white/70">
+        © 2026 JEM Heating and Air Conditioning, Inc. All rights reserved. | York Authorized Dealer
       </div>
     </footer>
   )

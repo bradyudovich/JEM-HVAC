@@ -1,89 +1,70 @@
 import Link from 'next/link'
-import { ServiceLayout } from '@/app/components/ServiceLayout'
 import { createPageMetadata } from '@/app/lib/metadata'
+import { ServiceLayout } from '@/app/components/ServiceLayout'
 
 export const metadata = createPageMetadata({
-  title: 'Residential Services',
+  pageName: 'Residential Services',
   description:
-    'Get Westminster MD residential HVAC repair, replacement, maintenance, and indoor air quality solutions from JEM for dependable heating and cooling comfort.',
+    'Residential HVAC repair, replacement, and indoor air quality services for homes in Westminster and Carroll County, MD.',
   path: '/services/residential',
 })
 
-const serviceReplace = [
-  'Air Conditioning',
-  'Heat Pumps',
-  'Gas & Oil Furnaces',
-  'Gas & Oil Boilers',
-  'Water Heaters',
-]
-
-const indoorAirQuality = [
-  'Humidifiers',
-  'Electronic Air Cleaners',
-  'UV Lights',
-  'Media Air Filters',
-  'Energy Saving Programmable Thermostats',
-]
+const serviceReplace = ['Air Conditioning', 'Heat Pumps', 'Gas & Oil Furnaces', 'Gas & Oil Boilers', 'Water Heaters']
+const indoorAirQuality = ['Humidifiers', 'Electronic Air Cleaners', 'UV Lights', 'Media Air Filters', 'Programmable Thermostats']
 
 const additionalServices = [
   { label: 'Refrigerant Loss', href: '/refrigerant-loss' },
-  { label: 'Heating and Cooling Load Calculations' },
+  { label: 'Load Calculations' },
   { label: 'Zone Systems' },
   { label: 'Attic Fans' },
   { label: 'Duct Work' },
   { label: 'Ductless Split Systems' },
-  { label: 'Packaged Terminal Air Conditioners (PTACs)' },
+  { label: 'PTACs' },
   { label: 'Maintenance Agreements' },
 ]
 
-export default function ResidentialServicesPage() {
+export default function ResidentialPage() {
   return (
     <ServiceLayout
       title="Residential Services"
-      intro="Contact JEM for all your home heating and cooling needs. We specialize in add-on systems, system replacement and upgrade, preventive maintenance, repair, and service of all makes and models."
+      subtitle="Contact JEM for all your home heating and cooling needs. We specialize in add-on systems, system replacement and upgrade, preventive maintenance, repair, and service of all makes and models."
     >
-      <div className="grid gap-6 lg:grid-cols-2">
-        <section className="rounded-3xl bg-white p-8 shadow-soft animate-fade-up">
-          <h2 className="font-display text-3xl text-primary">Service & Replace</h2>
-          <ul className="mt-6 space-y-4 text-muted">
+      <div className="grid gap-6 md:grid-cols-2">
+        <section className="rounded-2xl shadow-md bg-white p-6">
+          <h2 className="font-display text-3xl">Service & Replace</h2>
+          <ul className="mt-4 space-y-2 text-muted list-disc list-inside">
             {serviceReplace.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-accent" />
-                <span>{item}</span>
-              </li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </section>
 
-        <section className="rounded-3xl bg-white p-8 shadow-soft animate-fade-up">
-          <h2 className="font-display text-3xl text-primary">Indoor Air Quality</h2>
-          <ul className="mt-6 space-y-4 text-muted">
+        <section className="rounded-2xl shadow-md bg-white p-6">
+          <h2 className="font-display text-3xl">Indoor Air Quality</h2>
+          <ul className="mt-4 space-y-2 text-muted list-disc list-inside">
             {indoorAirQuality.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-accent" />
-                <span>{item}</span>
-              </li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </section>
       </div>
 
-      <section className="rounded-3xl bg-white p-8 shadow-soft animate-fade-up">
-        <h2 className="font-display text-3xl text-primary">Additional Services</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {additionalServices.map((item) => (
-            <div key={item.label} className="rounded-2xl bg-surface px-5 py-4 text-muted">
-              {item.href ? (
-                <Link href={item.href} className="font-medium text-accent hover:text-primary">
-                  {item.label}
+      <section className="rounded-2xl shadow-md bg-white p-6">
+        <h2 className="font-display text-3xl">Additional Services</h2>
+        <ul className="mt-4 grid sm:grid-cols-2 gap-2 text-muted">
+          {additionalServices.map((service) => (
+            <li key={service.label}>
+              {service.href ? (
+                <Link href={service.href} className="font-medium text-accent hover:text-primary">
+                  {service.label}
                 </Link>
               ) : (
-                <span>{item.label}</span>
+                service.label
               )}
-            </div>
+            </li>
           ))}
-        </div>
-        <p className="mt-8 text-sm font-medium text-primary">
+        </ul>
+        <p className="mt-5 font-medium text-primary">
           We service all makes and models. Major credit cards accepted. Financing available.
         </p>
       </section>

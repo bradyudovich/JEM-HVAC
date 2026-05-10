@@ -1,11 +1,12 @@
 export const siteConfig = {
-  name: 'JEM Heating & Air Conditioning',
-  description:
-    'Professional HVAC installation, repair, and maintenance for homes and businesses.',
+  name: 'JEM Heating and Air Conditioning, Inc.',
+  shortName: 'JEM Heating & Air Conditioning',
   url: 'https://www.jemhvac.com',
-  phone: '(555) 123-4567',
-  email: 'service@jemhvac.com',
-  address: '123 Comfort Lane, Your City, ST 00000',
-  hours: 'Mon-Fri 8:00 AM - 6:00 PM',
-  cta: 'Request Service',
-}
+  phoneTollFree: '1-888-684-0657',
+  phoneLocal: '410-840-9328',
+  email: 'contact@4jem.com',
+  address: '150 Airport Drive, Unit 1, Westminster, MD 21157',
+  hours: 'Mon–Fri 8:00AM–4:30PM | Sat–Sun: Closed | Emergencies: Call for Service',
+  founded: 'February 19, 1997',
+  serviceArea: 'Carroll County, MD and surrounding areas',
+} as const

@@ -1,61 +1,61 @@
 import Link from 'next/link'
-import { ServiceLayout } from '@/app/components/ServiceLayout'
 import { createPageMetadata } from '@/app/lib/metadata'
+import { PageHero } from '@/app/components/PageHero'
 
 export const metadata = createPageMetadata({
-  title: 'Services',
+  pageName: 'Services',
   description:
-    'Explore Westminster MD HVAC services from JEM, including heating and air conditioning repair, replacement, maintenance agreements, and indoor comfort solutions.',
+    'Explore residential, commercial, and maintenance HVAC services from JEM Heating and Air Conditioning.',
   path: '/services',
 })
 
-const cards = [
+const serviceCards = [
   {
     title: 'Residential Services',
-    description:
-      'Heating and cooling repair, replacement, upgrades, and indoor comfort solutions for your home.',
+    description: 'Complete home heating and cooling support for all makes and models.',
     href: '/services/residential',
   },
   {
     title: 'Commercial Services',
-    description:
-      'Maintenance, repair, and replacement for packaged rooftop equipment and other commercial HVAC systems.',
+    description: 'Repair, maintenance, and replacement for business HVAC equipment.',
     href: '/services/commercial',
   },
   {
-    title: 'Maintenance Contracts',
-    description:
-      'Protect system performance with a preventive maintenance agreement tailored to your equipment and schedule.',
+    title: 'Maintenance Contract',
+    description: 'Preventive maintenance agreements for long-term comfort and reliability.',
     href: '/services/maintenance',
   },
 ]
 
 export default function ServicesPage() {
   return (
-    <ServiceLayout
-      title="Our Services"
-      intro="JEM Heating and Air Conditioning offers both residential and commercial HVAC services. Our experienced team has the knowledge to service, repair, and replace all makes and models."
-    >
-      <div className="rounded-3xl bg-white p-8 shadow-soft animate-fade-up">
-        <h2 className="font-display text-3xl text-primary">Service Categories</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {cards.map((card) => (
-            <article
-              key={card.title}
-              className="rounded-2xl border-t-4 border-accent bg-surface p-6 shadow-soft transition-all duration-300 hover:-translate-y-2"
-            >
-              <h3 className="font-display text-2xl text-primary">{card.title}</h3>
-              <p className="mt-4 text-muted">{card.description}</p>
-              <Link
-                href={card.href}
-                className="mt-6 inline-flex items-center text-sm font-semibold text-accent hover:text-primary"
-              >
-                Explore Service →
-              </Link>
-            </article>
-          ))}
+    <>
+      <PageHero
+        title="Our Services"
+        subtitle="Residential and commercial heating and cooling services delivered with quality, integrity, and expediency."
+        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
+      />
+
+      <section className="py-12 md:py-20 bg-surface">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="max-w-3xl text-muted">
+            JEM provides dependable HVAC service across Carroll County, from emergency repairs and
+            preventive maintenance to complete system replacement.
+          </p>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {serviceCards.map((card) => (
+              <article key={card.title} className="rounded-2xl shadow-md bg-white p-6">
+                <h2 className="font-display text-2xl">{card.title}</h2>
+                <p className="mt-3 text-muted">{card.description}</p>
+                <Link href={card.href} className="mt-4 inline-block font-semibold text-accent hover:text-primary">
+                  View Service
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
-      </div>
-    </ServiceLayout>
+      </section>
+    </>
   )
 }

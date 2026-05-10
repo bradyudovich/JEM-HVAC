@@ -1,26 +1,25 @@
 import type { MetadataRoute } from 'next'
 import { siteConfig } from '@/app/lib/site-config'
 
-export const dynamic = 'force-static'
-
-const pagePaths = [
+const routes = [
   '/',
   '/about',
-  '/contact',
-  '/indoor-air-quality',
-  '/refrigerant-loss',
   '/services',
+  '/services/residential',
   '/services/commercial',
   '/services/maintenance',
-  '/services/residential',
-  '/york-warranty',
+  '/services/york-warranty',
+  '/indoor-air-quality',
+  '/refrigerant-loss',
+  '/testimonials',
+  '/faq',
+  '/contact',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
-
-  return pagePaths.map((path) => ({
-    url: new URL(path, siteConfig.url).toString(),
+  return routes.map((route) => ({
+    url: new URL(route, siteConfig.url).toString(),
     lastModified,
   }))
 }
