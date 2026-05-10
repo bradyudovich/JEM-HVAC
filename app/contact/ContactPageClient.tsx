@@ -92,7 +92,7 @@ export function ContactPageClient() {
 
             <label className="block">
               <span className="mb-1 block text-base font-semibold text-gray-700">Message</span>
-              <textarea name="message" rows={5} className="min-h-[120px] w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent md:min-h-[150px]" />
+              <textarea name="message" className="min-h-[120px] w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent md:min-h-[150px]" />
             </label>
 
             <button
