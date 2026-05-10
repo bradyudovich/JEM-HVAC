@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Building2, ChevronDown, Home, Wind } from 'lucide-react'
+import { BadgeCheck, Building2, ChevronDown, Clock, Home, Phone, Shield, ThumbsUp, Wind } from 'lucide-react'
 import { createPageMetadata } from '@/app/lib/metadata'
 import { testimonials } from '@/app/lib/testimonials'
 import { CTABanner } from '@/app/components/CTABanner'
@@ -43,33 +43,26 @@ const serviceCards = [
 export default function HomePage() {
   return (
     <>
-      <section className="flex min-h-[85vh] items-center justify-center bg-primary px-4 py-16 text-center text-white md:px-6 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Carroll County, Maryland</p>
-          <h1 className="mb-4 text-3xl font-display font-bold leading-tight text-white sm:text-4xl md:mb-6 md:text-5xl lg:text-6xl xl:text-7xl">
+      <section className="bg-primary flex items-center justify-center text-center px-4 md:px-6" style={{ minHeight: '70vh' }}>
+        <div className="max-w-4xl mx-auto py-12 md:py-16">
+          <p className="text-accent uppercase tracking-widest text-xs font-semibold mb-2">
+            Carroll County, Maryland
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white leading-tight mb-3">
             Carroll County&apos;s Trusted HVAC Experts Since 1997
           </h1>
-          <p className="mx-auto mb-6 max-w-xl text-base text-white/70 md:mb-8 md:text-xl">
-            Professional heating &amp; cooling service, fast response times, and honest pricing for
-            residential and commercial clients.
+          <p className="text-sm md:text-lg text-white/70 max-w-xl mx-auto mb-6">
+            Professional heating &amp; cooling service, fast response times, and honest pricing for residential and commercial clients.
           </p>
-          <div className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row md:mb-10">
-            <Link
-              href="/contact"
-              className="inline-flex min-h-[44px] min-w-[44px] w-full items-center justify-center rounded-full bg-accent px-8 py-3 text-center font-semibold text-white hover:bg-orange-600 focus-visible:bg-orange-600 sm:w-auto md:py-4"
-            >
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-6">
+            <a href="/contact" className="w-full sm:w-auto bg-accent text-white rounded-full px-8 py-3 font-semibold text-sm hover:bg-orange-600 focus-visible:bg-orange-600 transition-colors">
               Request Service
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex min-h-[44px] min-w-[44px] w-full items-center justify-center rounded-full border-2 border-white px-8 py-3 text-center font-semibold text-white hover:bg-white hover:text-primary focus-visible:bg-white focus-visible:text-primary sm:w-auto md:py-4"
-            >
+            </a>
+            <a href="/services" className="w-full sm:w-auto border-2 border-white text-white rounded-full px-8 py-3 font-semibold text-sm hover:bg-white hover:text-primary focus-visible:bg-white focus-visible:text-primary transition-colors">
               View Services
-            </Link>
+            </a>
           </div>
-          <div className="mt-8 flex justify-center">
-            <ChevronDown className="h-8 w-8 animate-bounce text-white/40" aria-hidden="true" />
-          </div>
+          <ChevronDown className="w-6 h-6 text-white/30 animate-bounce mx-auto" aria-hidden="true" />
         </div>
       </section>
 
@@ -112,6 +105,30 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-white py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="text-center mb-10">
+            <p className="text-accent uppercase tracking-widest text-xs font-semibold mb-2">Why JEM</p>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-3">The JEM Difference</h2>
+            <div className="w-12 h-1 bg-accent mx-auto"></div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { icon: <Shield className="w-8 h-8" aria-hidden="true" />, title: 'Licensed & Insured', body: 'Fully licensed, bonded, and insured for your peace of mind on every job.' },
+              { icon: <Clock className="w-8 h-8" aria-hidden="true" />, title: 'Fast Response', body: 'We know a broken HVAC isn\'t just inconvenient. We respond quickly — including emergencies.' },
+              { icon: <ThumbsUp className="w-8 h-8" aria-hidden="true" />, title: 'All Makes & Models', body: 'We service every brand and every system — not just the ones we sell.' },
+              { icon: <BadgeCheck className="w-8 h-8" aria-hidden="true" />, title: 'York Authorized Dealer', body: 'Certified to install and warrant York equipment, one of the most trusted names in HVAC.' },
+            ].map((item, i) => (
+              <div key={i} className="bg-surface rounded-2xl p-6 text-center hover:shadow-md transition-shadow">
+                <div className="text-accent mb-3 flex justify-center">{item.icon}</div>
+                <h3 className="text-base font-display font-bold text-primary mb-2">{item.title}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white px-4 py-12 md:px-6 md:py-20">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
           <div className="order-last flex h-56 w-full items-center justify-center rounded-2xl bg-gray-200 text-lg text-gray-400 md:order-none md:h-80">
@@ -135,6 +152,24 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-surface py-14 md:py-16">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
+          <p className="text-accent uppercase tracking-widest text-xs font-semibold mb-2">Coverage</p>
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-primary mb-3">Our Service Area</h2>
+          <div className="w-12 h-1 bg-accent mx-auto mb-6"></div>
+          <p className="text-gray-600 text-sm max-w-xl mx-auto mb-8">
+            Proudly serving Westminster, New Windsor, Eldersburg, Taneytown, Sykesville, and all of Carroll County, Maryland — since 1997.
+          </p>
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3">
+            {['Westminster', 'New Windsor', 'Eldersburg', 'Taneytown', 'Sykesville', 'Hampstead', 'Manchester', 'Mount Airy', 'Carroll County, MD'].map((area) => (
+              <span key={area} className="bg-white border border-gray-200 text-primary text-xs font-medium rounded-full px-4 py-2 shadow-sm">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-surface px-4 py-12 md:px-6 md:py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-2 text-center text-sm font-semibold uppercase tracking-widest text-accent">Testimonials</p>
@@ -154,6 +189,26 @@ export default function HomePage() {
               See All Testimonials →
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-primary py-10 md:py-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <div>
+            <h3 className="text-xl md:text-2xl font-display font-bold text-white mb-1">
+              HVAC Emergency? We&apos;re Here.
+            </h3>
+            <p className="text-white/60 text-sm">
+              Heating or cooling failure doesn&apos;t wait for business hours. Call us any time.
+            </p>
+          </div>
+          <a
+            href="tel:18886840657"
+            className="flex items-center gap-2 bg-accent text-white rounded-full px-8 py-3 font-semibold text-sm hover:bg-orange-600 focus-visible:bg-orange-600 transition-colors whitespace-nowrap flex-shrink-0"
+          >
+            <Phone className="w-4 h-4" aria-hidden="true" />
+            Call 1-888-684-0657
+          </a>
         </div>
       </section>
 
