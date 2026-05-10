@@ -94,7 +94,7 @@ export function Header() {
       </header>
 
       <div
-        className={`fixed inset-0 z-50 flex flex-col bg-primary text-white transition-transform md:hidden ${
+        className={`fixed inset-0 z-[60] flex flex-col bg-primary text-white transition-transform md:hidden ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
         role="dialog"
