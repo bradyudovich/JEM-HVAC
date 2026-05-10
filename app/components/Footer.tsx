@@ -10,8 +10,6 @@ export function Footer() {
           <h2 className="text-lg font-display font-bold mb-1">JEM</h2>
           <p className="text-white/60 text-xs mb-2">Heating & Air Conditioning</p>
           <p className="text-white/60 text-xs leading-relaxed">Quality • Integrity • Expediency</p>
-          <p className="text-white/60 text-xs leading-relaxed">150 Airport Drive, Unit 1</p>
-          <p className="text-white/60 text-xs leading-relaxed">Westminster, MD 21157</p>
         </div>
 
         <div>
