@@ -43,17 +43,17 @@ const serviceCards = [
 export default function HomePage() {
   return (
     <>
-      <section className="flex min-h-screen items-center justify-center bg-primary px-4 text-center text-white md:px-6">
+      <section className="flex min-h-[85vh] items-center justify-center bg-primary px-4 py-16 text-center text-white md:px-6 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-accent">Carroll County, Maryland</p>
-          <h1 className="mb-6 text-3xl font-display font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent">Carroll County, Maryland</p>
+          <h1 className="mb-4 text-3xl font-display font-bold leading-tight text-white sm:text-4xl md:mb-6 md:text-5xl lg:text-6xl xl:text-7xl">
             Carroll County&apos;s Trusted HVAC Experts Since 1997
           </h1>
-          <p className="mx-auto mb-10 max-w-2xl text-base text-white/70 md:text-xl">
+          <p className="mx-auto mb-6 max-w-xl text-base text-white/70 md:mb-8 md:text-xl">
             Professional heating &amp; cooling service, fast response times, and honest pricing for
             residential and commercial clients.
           </p>
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row md:mb-10">
             <Link
               href="/contact"
               className="inline-flex min-h-[44px] min-w-[44px] w-full items-center justify-center rounded-full bg-accent px-8 py-3 text-center font-semibold text-white hover:bg-orange-600 focus-visible:bg-orange-600 sm:w-auto md:py-4"
@@ -67,7 +67,7 @@ export default function HomePage() {
               View Services
             </Link>
           </div>
-          <div className="mt-16 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <ChevronDown className="h-8 w-8 animate-bounce text-white/40" aria-hidden="true" />
           </div>
         </div>
