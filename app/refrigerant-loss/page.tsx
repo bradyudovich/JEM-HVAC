@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createPageMetadata } from '@/app/lib/metadata'
 import { PageHero } from '@/app/components/PageHero'
+import { CTABanner } from '@/app/components/CTABanner'
 
 export const metadata = createPageMetadata({
   pageName: 'Refrigerant Loss',
@@ -22,53 +23,60 @@ export default function RefrigerantLossPage() {
         ]}
       />
 
-      <section className="py-12 md:py-20 bg-surface">
-        <article className="max-w-3xl mx-auto px-6 space-y-8">
-          <section>
-            <h2 className="font-display text-3xl">Understanding Refrigerant in a Sealed System</h2>
-            <p className="mt-3 text-muted">
+      <section className="bg-surface py-12 md:py-20">
+        <article className="mx-auto max-w-7xl space-y-8 px-6">
+          <section className="rounded-2xl border-t-4 border-accent bg-white p-8 shadow-md">
+            <h2 className="mb-2 text-xl font-display font-bold text-primary">Understanding Refrigerant in a Sealed System</h2>
+            <p>
               Refrigerant belongs in a sealed system and should not be consumed over time. If levels
               are low, there is a leak that must be addressed.
             </p>
           </section>
 
-          <section>
-            <h2 className="font-display text-3xl">How Systems Are Charged</h2>
-            <p className="mt-3 text-muted">
+          <section className="rounded-2xl border-t-4 border-accent bg-white p-8 shadow-md">
+            <h2 className="mb-2 text-xl font-display font-bold text-primary">How Systems Are Charged</h2>
+            <p>
               Systems are charged during installation to match manufacturer specifications. Proper
               charging is critical for efficiency, comfort, and equipment reliability.
             </p>
           </section>
 
-          <section>
-            <h2 className="font-display text-3xl">Your Two Options When Refrigerant Is Low</h2>
-            <ol className="mt-3 list-decimal list-inside text-muted space-y-2">
-              <li>Add refrigerant to restore short-term operation.</li>
-              <li>Locate and repair the leak to correct the root issue.</li>
-            </ol>
+          <section className="rounded-2xl border-t-4 border-accent bg-white p-8 shadow-md">
+            <h2 className="mb-4 text-xl font-display font-bold text-primary">Your Two Options When Refrigerant Is Low</h2>
+            <ul className="space-y-3">
+              <li className="flex items-start gap-3"><span className="text-accent">✓</span><span>Add refrigerant to restore short-term operation.</span></li>
+              <li className="flex items-start gap-3"><span className="text-accent">✓</span><span>Locate and repair the leak to correct the root issue.</span></li>
+            </ul>
           </section>
 
-          <section>
-            <h2 className="font-display text-3xl">How We Find Leaks</h2>
-            <p className="mt-3 text-muted">
+          <section className="rounded-2xl border-t-4 border-accent bg-white p-8 shadow-md">
+            <h2 className="mb-2 text-xl font-display font-bold text-primary">How We Find Leaks</h2>
+            <p>
               We use proven detection methods to identify leaks in evaporator coils, condenser coils,
               and refrigerant lines, then provide repair recommendations.
             </p>
           </section>
 
-          <section className="rounded-2xl border border-amber-300 bg-amber-100 p-6">
-            <h2 className="font-display text-3xl">Policy</h2>
-            <p className="mt-3 text-amber-900">
+          <section className="rounded-2xl border border-amber-300 bg-amber-100 p-8 shadow-md">
+            <h2 className="mb-2 text-xl font-display font-bold text-primary">Policy</h2>
+            <p className="text-amber-900">
               If you elect to add refrigerant or leak sealant, the risk is entirely yours. We will
               not refund or reimburse for repeat leaks or additional service.
             </p>
           </section>
 
-          <Link href="/services/residential" className="inline-block font-semibold text-accent hover:text-primary">
+          <Link href="/services/residential" className="inline-block font-medium text-accent hover:underline">
             ← Back to Residential Services
           </Link>
         </article>
       </section>
+
+      <CTABanner
+        heading="Need help with refrigerant issues?"
+        subtext="Our team can inspect your system and explain the best next step."
+        primaryLabel="Contact Us"
+        primaryHref="/contact"
+      />
     </>
   )
 }

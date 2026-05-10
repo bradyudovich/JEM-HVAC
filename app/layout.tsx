@@ -26,14 +26,14 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-surface text-text antialiased">
+      <body className="bg-surface font-sans text-gray-700 antialiased">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-primary"
         >
           Skip to main content
         </a>
-        <div className="min-h-screen flex flex-col">
+        <div className="flex min-h-screen flex-col">
           <Header />
           <main id="main-content" className="flex-1">
             {children}

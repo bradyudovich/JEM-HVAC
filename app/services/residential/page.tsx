@@ -29,37 +29,44 @@ export default function ResidentialPage() {
       title="Residential Services"
       subtitle="Contact JEM for all your home heating and cooling needs. We specialize in add-on systems, system replacement and upgrade, preventive maintenance, repair, and service of all makes and models."
     >
-      <div className="grid gap-6 md:grid-cols-2">
-        <section className="rounded-2xl shadow-md bg-white p-6">
-          <h2 className="font-display text-3xl">Service & Replace</h2>
-          <ul className="mt-4 space-y-2 text-muted list-disc list-inside">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <section className="rounded-2xl bg-white p-8 shadow-md">
+          <h2 className="mb-4 border-t-4 border-accent pt-4 text-xl font-display font-bold text-primary">Service & Replace</h2>
+          <ul>
             {serviceReplace.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className="flex items-center gap-3 border-b border-gray-100 py-2 last:border-0">
+                <span className="text-lg text-accent">✓</span>
+                <span className="text-sm text-gray-700">{item}</span>
+              </li>
             ))}
           </ul>
         </section>
 
-        <section className="rounded-2xl shadow-md bg-white p-6">
-          <h2 className="font-display text-3xl">Indoor Air Quality</h2>
-          <ul className="mt-4 space-y-2 text-muted list-disc list-inside">
+        <section className="rounded-2xl bg-white p-8 shadow-md">
+          <h2 className="mb-4 border-t-4 border-accent pt-4 text-xl font-display font-bold text-primary">Indoor Air Quality</h2>
+          <ul>
             {indoorAirQuality.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className="flex items-center gap-3 border-b border-gray-100 py-2 last:border-0">
+                <span className="text-lg text-accent">✓</span>
+                <span className="text-sm text-gray-700">{item}</span>
+              </li>
             ))}
           </ul>
         </section>
       </div>
 
-      <section className="rounded-2xl shadow-md bg-white p-6">
-        <h2 className="font-display text-3xl">Additional Services</h2>
-        <ul className="mt-4 grid sm:grid-cols-2 gap-2 text-muted">
+      <section className="rounded-2xl bg-white p-8 shadow-md">
+        <h2 className="mb-4 border-t-4 border-accent pt-4 text-xl font-display font-bold text-primary">Additional Services</h2>
+        <ul className="grid grid-cols-1 gap-2 md:grid-cols-2">
           {additionalServices.map((service) => (
-            <li key={service.label}>
+            <li key={service.label} className="flex items-center gap-3 border-b border-gray-100 py-2 last:border-0">
+              <span className="text-lg text-accent">✓</span>
               {service.href ? (
-                <Link href={service.href} className="font-medium text-accent hover:text-primary">
+                <Link href={service.href} className="text-sm text-accent hover:underline font-medium">
                   {service.label}
                 </Link>
               ) : (
-                service.label
+                <span className="text-sm text-gray-700">{service.label}</span>
               )}
             </li>
           ))}

@@ -9,9 +9,9 @@ const reasons = [
 
 export function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-white py-20">
+    <section id="why-us" className="bg-white py-12 md:py-20">
       <Container>
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-start">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_0.8fr] lg:items-start">
           <div className="space-y-10">
             <SectionHeading
               eyebrow="Why Choose Us"
@@ -21,10 +21,7 @@ export function WhyChooseUs() {
 
             <div className="grid gap-4">
               {reasons.map((reason) => (
-                <div
-                  key={reason}
-                  className="rounded-2xl border border-black/5 bg-surface px-5 py-4 text-muted"
-                >
+                <div key={reason} className="rounded-2xl bg-surface px-5 py-4 text-gray-700 shadow-md">
                   {reason}
                 </div>
               ))}

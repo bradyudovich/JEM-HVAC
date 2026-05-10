@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createPageMetadata } from '@/app/lib/metadata'
 import { PageHero } from '@/app/components/PageHero'
+import { CTABanner } from '@/app/components/CTABanner'
 
 export const metadata = createPageMetadata({
   pageName: 'Services',
@@ -11,16 +12,19 @@ export const metadata = createPageMetadata({
 
 const serviceCards = [
   {
+    icon: '🏠',
     title: 'Residential Services',
     description: 'Complete home heating and cooling support for all makes and models.',
     href: '/services/residential',
   },
   {
+    icon: '🏢',
     title: 'Commercial Services',
     description: 'Repair, maintenance, and replacement for business HVAC equipment.',
     href: '/services/commercial',
   },
   {
+    icon: '🔧',
     title: 'Maintenance Contract',
     description: 'Preventive maintenance agreements for long-term comfort and reliability.',
     href: '/services/maintenance',
@@ -36,19 +40,24 @@ export default function ServicesPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
       />
 
-      <section className="py-12 md:py-20 bg-surface">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="max-w-3xl text-muted">
+      <section className="bg-surface py-12 md:py-20">
+        <div className="mx-auto max-w-7xl px-6">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Services</p>
+          <h2 className="mb-4 text-4xl font-display font-bold text-primary">Complete HVAC Support</h2>
+          <p>
             JEM provides dependable HVAC service across Carroll County, from emergency repairs and
             preventive maintenance to complete system replacement.
           </p>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
             {serviceCards.map((card) => (
-              <article key={card.title} className="rounded-2xl shadow-md bg-white p-6">
-                <h2 className="font-display text-2xl">{card.title}</h2>
-                <p className="mt-3 text-muted">{card.description}</p>
-                <Link href={card.href} className="mt-4 inline-block font-semibold text-accent hover:text-primary">
+              <article key={card.title} className="rounded-2xl border-t-4 border-accent bg-white p-8 shadow-md hover:shadow-xl">
+                <p className="mb-4 text-3xl text-accent" aria-hidden="true">
+                  {card.icon}
+                </p>
+                <h3 className="mb-2 text-xl font-display font-bold text-primary">{card.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-600">{card.description}</p>
+                <Link href={card.href} className="mt-4 inline-block text-sm font-semibold text-accent hover:underline">
                   View Service
                 </Link>
               </article>
@@ -56,6 +65,15 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+
+      <CTABanner
+        heading="Need HVAC service now?"
+        subtext="Our team is ready to help with fast, dependable support."
+        primaryLabel="Call 1-888-684-0657"
+        primaryHref="tel:1-888-684-0657"
+        secondaryLabel="Contact Us"
+        secondaryHref="/contact"
+      />
     </>
   )
 }

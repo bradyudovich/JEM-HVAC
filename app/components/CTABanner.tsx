@@ -18,23 +18,21 @@ export function CTABanner({
   secondaryHref,
 }: CTABannerProps) {
   return (
-    <section className="bg-accent text-white py-12 md:py-16">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div>
-          <h2 className="font-display text-3xl text-white sm:text-4xl">{heading}</h2>
-          <p className="mt-3 text-white/90">{subtext}</p>
-        </div>
-        <div className="flex flex-col gap-3 sm:flex-row">
+    <section className="bg-accent py-20 text-center">
+      <div className="mx-auto max-w-7xl px-6">
+        <h2 className="mb-4 text-4xl font-display font-bold text-white">{heading}</h2>
+        <p className="mb-8 text-lg text-white/80">{subtext}</p>
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <Link
             href={primaryHref}
-            className="inline-flex items-center justify-center rounded-full border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-accent"
+            className="rounded-full bg-white px-8 py-3 font-semibold text-accent hover:bg-gray-100"
           >
             {primaryLabel}
           </Link>
           {secondaryLabel && secondaryHref ? (
             <Link
               href={secondaryHref}
-              className="inline-flex items-center justify-center rounded-full border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-accent"
+              className="rounded-full border-2 border-white px-8 py-3 font-semibold text-white hover:bg-white hover:text-accent"
             >
               {secondaryLabel}
             </Link>

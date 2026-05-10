@@ -1,30 +1,24 @@
 import Link from 'next/link'
 import { navLinks } from '@/app/lib/services'
 
-function Icon({ children }: { children: React.ReactNode }) {
-  return (
-    <span aria-hidden="true" className="mt-1 inline-flex h-5 w-5 text-accent">
-      {children}
-    </span>
-  )
-}
-
 export function Footer() {
   return (
-    <footer className="bg-primary text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-3">
+    <footer className="bg-primary py-16 text-white">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 md:grid-cols-3">
         <div>
-          <h2 className="font-display text-2xl text-white">JEM Heating & Air Conditioning</h2>
-          <p className="mt-4 text-white/80">Quality • Integrity • Expediency</p>
-          <p className="mt-2 text-white/70">Serving Carroll County, MD since 1997.</p>
+          <h2 className="font-display text-3xl font-bold text-accent">JEM</h2>
+          <p className="mt-3 text-white/70">Heating & Air Conditioning</p>
+          <p className="mt-2 text-white/70">Quality • Integrity • Expediency</p>
+          <p className="mt-4 text-white/80">150 Airport Drive, Unit 1</p>
+          <p className="text-white/80">Westminster, MD 21157</p>
         </div>
 
         <div>
-          <h2 className="font-display text-2xl text-white">Quick Links</h2>
-          <ul className="mt-4 space-y-2">
+          <h2 className="text-xl font-display font-semibold text-accent">Quick Links</h2>
+          <ul className="mt-4 space-y-3">
             {navLinks.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-white/80 hover:text-accent">
+                <Link href={item.href} className="text-white hover:text-accent">
                   {item.label}
                 </Link>
               </li>
@@ -33,31 +27,17 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="font-display text-2xl text-white">Contact</h2>
-          <ul className="mt-4 space-y-3 text-white/80">
-            <li className="flex gap-2">
-              <Icon>☎</Icon>
-              <span>
-                <Link href="tel:1-888-684-0657" className="hover:text-accent">1-888-684-0657</Link> |{' '}
-                <Link href="tel:410-840-9328" className="hover:text-accent">410-840-9328</Link>
-              </span>
-            </li>
-            <li className="flex gap-2">
-              <Icon>✉</Icon>
-              <Link href="mailto:contact@4jem.com" className="hover:text-accent">contact@4jem.com</Link>
-            </li>
-            <li className="flex gap-2">
-              <Icon>📍</Icon>
-              <span>150 Airport Drive, Unit 1, Westminster, MD 21157</span>
-            </li>
-            <li className="flex gap-2">
-              <Icon>🕒</Icon>
-              <span>Mon–Fri 8:00AM–4:30PM | Sat–Sun: Closed | Emergencies: Call for Service</span>
-            </li>
-          </ul>
+          <h2 className="text-xl font-display font-semibold text-accent">Contact</h2>
+          <div className="mt-4 space-y-3 text-white/90">
+            <p>📞 1-888-684-0657 | 410-840-9328</p>
+            <p>✉️ contact@4jem.com</p>
+            <p>📍 150 Airport Drive, Unit 1, Westminster, MD 21157</p>
+            <p>🕐 Mon–Fri 8:00AM–4:30PM | Sat–Sun: Closed | Emergencies: Call for Service</p>
+          </div>
         </div>
       </div>
-      <div className="border-t border-white/20 py-5 px-6 text-center text-sm text-white/70">
+
+      <div className="mx-auto mt-12 max-w-7xl border-t border-white/20 px-6 pt-6 text-sm text-white/50">
         © 2026 JEM Heating and Air Conditioning, Inc. All rights reserved. | York Authorized Dealer
       </div>
     </footer>
