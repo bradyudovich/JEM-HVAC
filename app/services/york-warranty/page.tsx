@@ -33,7 +33,8 @@ export default function YorkWarrantyPage() {
 
           <form className="rounded-2xl shadow-md bg-white p-6 space-y-4">
             <label className="flex gap-2">
-              <input type="checkbox" name="acceptTerms" /> I accept the York Comfort Plan terms and conditions
+              <input type="checkbox" name="acceptTerms" />
+              <span>I accept the York Comfort Plan terms and conditions</span>
             </label>
             <div className="grid md:grid-cols-2 gap-4">
               <label>Name<input type="text" name="name" className="mt-1 w-full rounded-xl border p-2" /></label>

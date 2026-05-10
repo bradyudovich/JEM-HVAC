@@ -2,7 +2,11 @@ import Link from 'next/link'
 import { navLinks } from '@/app/lib/services'
 
 function Icon({ children }: { children: React.ReactNode }) {
-  return <span className="mt-1 inline-flex h-5 w-5 text-accent">{children}</span>
+  return (
+    <span aria-hidden="true" className="mt-1 inline-flex h-5 w-5 text-accent">
+      {children}
+    </span>
+  )
 }
 
 export function Footer() {
