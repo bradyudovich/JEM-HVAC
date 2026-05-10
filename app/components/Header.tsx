@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation'
 const serviceItems = [
   { label: 'Residential', href: '/services/residential' },
   { label: 'Commercial', href: '/services/commercial' },
-  { label: 'Maintenance Contract', href: '/services/maintenance-contract' },
-  { label: 'York Warranty', href: '/services/york-warranty' },
+  { label: 'Maintenance Contract', href: '/services/maintenance' },
+  { label: 'York Warranty', href: '/york-warranty' },
 ]
 
 const navItems = [

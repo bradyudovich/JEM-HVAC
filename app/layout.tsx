@@ -47,6 +47,7 @@ export const metadata: Metadata = {
     description:
       'Trusted heating and cooling services for homes and businesses.',
   },
+  themeColor: '#0A1628',
 }
 
 export default function RootLayout({
@@ -60,9 +61,17 @@ export default function RootLayout({
       className={`${geistSans.variable} ${dmSerifDisplay.variable}`}
     >
       <body className="bg-surface text-text font-sans antialiased">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary focus:shadow"
+        >
+          Skip to main content
+        </a>
         <div className="flex min-h-screen flex-col bg-surface text-text">
           <Header />
-          <main className="flex-1">{children}</main>
+          <main id="main-content" className="flex-1">
+            {children}
+          </main>
           <Footer />
         </div>
       </body>

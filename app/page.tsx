@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { createPageMetadata } from '@/app/lib/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'Home',
+  description:
+    'Westminster MD HVAC experts for heating and air conditioning repair, installation, and maintenance. JEM delivers service, fair pricing, and lasting comfort.',
+  path: '/',
+})
 
 const serviceCards = [
   {

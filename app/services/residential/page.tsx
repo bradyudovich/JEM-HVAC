@@ -1,5 +1,13 @@
 import Link from 'next/link'
 import { ServiceLayout } from '@/app/components/ServiceLayout'
+import { createPageMetadata } from '@/app/lib/metadata'
+
+export const metadata = createPageMetadata({
+  title: 'Residential Services',
+  description:
+    'Get Westminster MD residential HVAC repair, replacement, maintenance, and indoor air quality solutions from JEM for dependable heating and cooling comfort.',
+  path: '/services/residential',
+})
 
 const serviceReplace = [
   'Air Conditioning',
