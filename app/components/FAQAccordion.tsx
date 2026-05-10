@@ -67,7 +67,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
               }`}
             >
               <div className="overflow-hidden">
-                <p className="px-4 text-sm leading-relaxed text-gray-600 md:px-6">{item.a}</p>
+                <p className="text-sm leading-relaxed text-gray-600">{item.a}</p>
               </div>
             </div>
           </div>

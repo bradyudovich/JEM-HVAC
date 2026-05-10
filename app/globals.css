@@ -32,8 +32,6 @@ p {
 
 a {
   @apply cursor-pointer transition-all duration-200;
-  min-height: 44px;
-  min-width: 44px;
 }
 
 button,
@@ -45,6 +43,4 @@ select {
 
 button {
   @apply cursor-pointer;
-  min-height: 44px;
-  min-width: 44px;
 }
