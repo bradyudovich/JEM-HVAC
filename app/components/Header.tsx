@@ -97,8 +97,11 @@ export function Header() {
         className={`fixed inset-0 z-50 flex flex-col bg-primary text-white transition-transform md:hidden ${
           mobileOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation menu"
       >
-        <div className="flex h-16 items-center justify-between px-4">
+        <div className="flex h-16 items-center justify-between px-4 md:h-20">
           <span className="font-display text-lg font-bold text-accent">JEM</span>
           <button
             type="button"
