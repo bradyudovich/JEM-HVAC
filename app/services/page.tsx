@@ -41,9 +41,9 @@ export default function ServicesPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
       />
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-20">
+      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Services</p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent">Services</p>
           <h2 className="mb-4 text-2xl font-display font-bold text-primary md:text-4xl">Complete HVAC Support</h2>
           <p>
             JEM provides dependable HVAC service across Carroll County, from emergency repairs and

@@ -20,7 +20,7 @@ export function ContactPageClient() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
       />
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-20">
+      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:gap-10 lg:grid-cols-2">
           <aside className="rounded-2xl bg-primary p-6 text-white md:p-10">
             <h2 className="mb-6 text-3xl font-display font-bold text-white">Contact Information</h2>
@@ -105,11 +105,13 @@ export function ContactPageClient() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 md:px-6 md:py-20">
+      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-2xl bg-surface p-6 text-center shadow-md md:p-10">
-            <h2 className="mb-2 text-3xl font-display font-bold text-primary">Map Placeholder</h2>
-            <p>150 Airport Drive, Unit 1, Westminster, MD 21157</p>
+          <div className="flex h-56 w-full items-center justify-center rounded-2xl bg-white shadow-sm md:h-72">
+            <div className="text-center text-muted">
+              <MapPin className="mx-auto mb-2 h-8 w-8 opacity-40" aria-hidden="true" />
+              <p className="text-sm text-gray-500">150 Airport Drive, Unit 1, Westminster, MD 21157</p>
+            </div>
           </div>
         </div>
       </section>
