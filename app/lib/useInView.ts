@@ -7,6 +7,7 @@ export function useInView(threshold = 0.15) {
   const [inView, setInView] = useState(false)
 
   useEffect(() => {
+    const element = ref.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) setInView(true)
@@ -14,9 +15,12 @@ export function useInView(threshold = 0.15) {
       { threshold },
     )
 
-    if (ref.current) observer.observe(ref.current)
+    if (element) observer.observe(element)
 
-    return () => observer.disconnect()
+    return () => {
+      if (element) observer.unobserve(element)
+      observer.disconnect()
+    }
   }, [threshold])
 
   return { ref, inView }
