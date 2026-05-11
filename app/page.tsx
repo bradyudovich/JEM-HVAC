@@ -55,10 +55,10 @@ export default function HomePage() {
             Professional heating &amp; cooling service, fast response times, and honest pricing for residential and commercial clients.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <Link href="/contact" className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-accent text-white rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-orange-600 transition-colors whitespace-nowrap min-h-[44px]">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-accent text-white rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-orange-600 transition-colors whitespace-nowrap min-h-[44px] min-w-[44px]">
               Request Service
             </Link>
-            <Link href="/services" className="inline-flex items-center justify-center gap-2 w-full sm:w-auto border-2 border-white text-white rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-white hover:text-primary transition-colors whitespace-nowrap min-h-[44px]">
+            <Link href="/services" className="inline-flex items-center justify-center gap-2 w-full sm:w-auto border-2 border-white text-white rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-white hover:text-primary transition-colors whitespace-nowrap min-h-[44px] min-w-[44px]">
               View Services
             </Link>
           </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-accent text-white rounded-full px-8 py-3 font-semibold text-sm hover:bg-orange-600 focus-visible:bg-orange-600 transition-colors whitespace-nowrap flex-shrink-0 min-h-[44px]"
+            className="inline-flex items-center gap-2 bg-accent text-white rounded-full px-6 py-2.5 font-semibold text-sm hover:bg-orange-600 focus-visible:bg-orange-600 transition-colors whitespace-nowrap flex-shrink-0 min-h-[44px] min-w-[44px]"
           >
             Request Emergency Service
           </Link>
