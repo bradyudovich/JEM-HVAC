@@ -23,7 +23,7 @@ export function ServiceLayout({ children, title, subtitle }: ServiceLayoutProps)
         ]}
       />
 
-      <section className="bg-white px-4 py-12 md:px-6 md:py-20">
+      <section className="bg-white px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 md:gap-12 lg:flex-row">
           <div className="w-full space-y-8 lg:flex-1">{children}</div>
           <aside className="hidden h-fit w-64 flex-shrink-0 rounded-2xl bg-surface p-8 shadow-md lg:sticky lg:top-28 lg:block">

@@ -13,7 +13,7 @@ type PageHeroProps = {
 
 export function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps) {
   return (
-    <section className="bg-primary px-4 py-16 text-center md:py-24">
+    <section className="bg-primary px-4 py-12 text-center md:py-16">
       <div className="mx-auto max-w-7xl">
         <nav aria-label="Breadcrumb" className="mb-4 text-sm uppercase tracking-widest text-white/50">
           <ol className="flex flex-wrap items-center justify-center gap-2">

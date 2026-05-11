@@ -18,7 +18,7 @@ export function CTABanner({
   secondaryHref,
 }: CTABannerProps) {
   return (
-    <section className="bg-accent px-4 py-12 text-center md:px-6 md:py-20">
+    <section className="bg-accent px-4 py-12 text-center md:px-6 md:py-16">
       <div className="mx-auto max-w-7xl">
         <h2 className="mb-4 text-2xl font-display font-bold text-white md:text-4xl">{heading}</h2>
         <p className="mb-8 text-lg text-white/80">{subtext}</p>

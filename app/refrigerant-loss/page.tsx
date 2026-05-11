@@ -24,7 +24,7 @@ export default function RefrigerantLossPage() {
         ]}
       />
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-20">
+      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
         <article className="mx-auto max-w-3xl space-y-8">
           <section className="rounded-2xl border-t-4 border-accent bg-white p-6 shadow-md md:p-8">
             <h2 className="mb-2 text-xl font-display font-bold text-primary">Understanding Refrigerant in a Sealed System</h2>

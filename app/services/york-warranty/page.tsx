@@ -26,7 +26,7 @@ export default function YorkWarrantyPage() {
         ]}
       />
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-20">
+      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto max-w-7xl space-y-8">
           <article className="rounded-2xl bg-white p-6 shadow-md md:p-8">
             <h2 className="mb-4 border-t-4 border-accent pt-4 text-xl font-display font-bold text-primary">

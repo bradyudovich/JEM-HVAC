@@ -18,10 +18,10 @@ export default function AboutPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'About' }]}
       />
 
-      <section className="bg-white px-4 py-12 md:px-6 md:py-20">
+      <section className="bg-white px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
           <div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Our Story</p>
+            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent">Our Story</p>
             <h2 className="mb-4 text-2xl font-display font-bold text-primary md:text-4xl">Built From the Ground Up</h2>
             <p>
               JEM was established on February 19, 1997. Armed with only a pickup truck, a handful
@@ -31,9 +31,7 @@ export default function AboutPage() {
               your heating and cooling needs with uncompromised honesty, integrity, and expediency.
             </p>
           </div>
-          <div className="order-last flex h-56 w-full items-center justify-center rounded-2xl bg-gray-200 text-lg text-gray-400 md:order-none md:h-80">
-            Company History Image Placeholder
-          </div>
+          <div className="order-last flex h-56 w-full items-center justify-center rounded-2xl bg-gray-200 md:order-none md:h-80" aria-hidden="true" />
         </div>
       </section>
 
@@ -76,9 +74,9 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-12 text-center md:px-6 md:py-20">
+      <section className="bg-white px-4 py-12 text-center md:px-6 md:py-16">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Service Area</p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent">Service Area</p>
           <h2 className="mb-4 text-2xl font-display font-bold text-primary md:text-4xl">Where We Serve</h2>
           <p>
             Proudly serving Westminster, New Windsor, Carroll County, and surrounding Maryland

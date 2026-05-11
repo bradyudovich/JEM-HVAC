@@ -42,9 +42,9 @@ export default function IndoorAirQualityPage() {
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Indoor Air Quality' }]}
       />
 
-      <section className="bg-white px-4 py-12 md:px-6 md:py-20">
+      <section className="bg-white px-4 py-12 md:px-6 md:py-16">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent">Indoor Air Quality</p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent">Indoor Air Quality</p>
           <h2 className="mb-4 text-2xl font-display font-bold text-primary md:text-4xl">Cleaner, Healthier Indoor Air</h2>
           <p>
             Indoor air quality can impact respiratory health, comfort, and HVAC performance. JEM

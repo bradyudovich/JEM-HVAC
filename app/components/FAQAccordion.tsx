@@ -49,7 +49,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
                 }}
                 className="flex w-full min-h-[44px] min-w-[44px] items-center justify-between px-4 py-4 text-left hover:bg-gray-50 focus-visible:bg-gray-50 md:px-6 md:py-5"
               >
-                <span className="text-sm font-semibold text-primary md:text-base">{item.q}</span>
+                <span className={`text-sm font-semibold md:text-base ${isOpen ? 'text-accent' : 'text-primary'}`}>{item.q}</span>
                 {isOpen ? (
                   <Minus aria-hidden="true" className="h-5 w-5 text-accent" />
                 ) : (
