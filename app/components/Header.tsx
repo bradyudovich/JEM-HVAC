@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Menu, Phone, X } from 'lucide-react'
+import { Clock, Menu, Phone, X, Zap } from 'lucide-react'
 import Logo from '@/app/components/Logo'
 import { buttonStyles, layoutClasses } from '@/app/lib/styles'
 import { navLinks } from '@/app/lib/services'
@@ -15,16 +15,32 @@ export function Header() {
 
   return (
     <>
-      <div className={`bg-accent text-white text-xs text-center px-4 ${layoutClasses.announcement}`}>
-        <span className="font-medium">Serving Carroll County since 1997</span>
-        <span className="mx-2 opacity-60">|</span>
-        <span>Mon–Fri 8AM–4:30PM</span>
-        <span className="mx-2 opacity-60">|</span>
-        <span>Emergency service available</span>
-        <span className="mx-2 opacity-60">|</span>
-        <a href="tel:18886840657" className="font-semibold underline hover:no-underline">
-          1-888-684-0657
-        </a>
+      <div className="bg-primary text-white/80 text-xs py-1.5 px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+
+          {/* Left side — hide lower priority items at smaller breakpoints */}
+          <div className="flex items-center gap-3 min-w-0">
+            <span className="flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+              <Clock className="w-3 h-3 text-accent flex-shrink-0" />
+              <span className="whitespace-nowrap">Mon–Fri 8AM–4:30PM</span>
+            </span>
+            <span className="hidden sm:flex items-center gap-1.5 whitespace-nowrap flex-shrink-0">
+              <span className="text-white/20">·</span>
+              <Zap className="w-3 h-3 text-accent" />
+              Emergency service available
+            </span>
+          </div>
+
+          {/* Right side — phone number always visible */}
+          <a
+            href="tel:18886840657"
+            className="flex items-center gap-1.5 text-white font-semibold hover:text-accent transition-colors whitespace-nowrap flex-shrink-0"
+          >
+            <Phone className="w-3 h-3" />
+            1-888-684-0657
+          </a>
+
+        </div>
       </div>
       <header className="sticky top-0 z-50 w-full bg-primary shadow-sm">
         <div className={`${layoutClasses.container} flex h-16 items-center justify-between gap-4 md:h-20`}>

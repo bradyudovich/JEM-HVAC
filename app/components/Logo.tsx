@@ -16,21 +16,61 @@ export default function Logo({
   return (
     <div className="flex items-center gap-3">
       <div className={`${s.badge} relative flex-shrink-0`}>
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-          <path d="M20 2L4 8V22C4 31 12 37 20 39C28 37 36 31 36 22V8L20 2Z" fill="#1B3A2D" />
-          <path d="M20 2L4 8V11L20 5L36 11V8L20 2Z" fill="#C17B2F" />
-          <text
-            x="20"
-            y="26"
-            textAnchor="middle"
-            fill="white"
-            fontSize="11"
-            fontWeight="700"
-            fontFamily="Georgia, serif"
-            letterSpacing="1"
-          >
-            JEM
-          </text>
+        <svg
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+        >
+          {/* Top facet (crown) */}
+          <polygon
+            points="20,4 32,14 8,14"
+            fill="#C17B2F"
+          />
+          {/* Left upper facet */}
+          <polygon
+            points="8,14 20,4 20,36"
+            fill="#1B3A2D"
+            opacity="0.9"
+          />
+          {/* Right upper facet */}
+          <polygon
+            points="32,14 20,4 20,36"
+            fill="#1B3A2D"
+            opacity="0.7"
+          />
+          {/* Left lower facet */}
+          <polygon
+            points="8,14 20,36 4,18"
+            fill="#1B3A2D"
+            opacity="0.6"
+          />
+          {/* Right lower facet */}
+          <polygon
+            points="32,14 20,36 36,18"
+            fill="#1B3A2D"
+            opacity="0.5"
+          />
+          {/* Bottom point left */}
+          <polygon
+            points="4,18 20,36 8,14"
+            fill="#C17B2F"
+            opacity="0.6"
+          />
+          {/* Bottom point right */}
+          <polygon
+            points="36,18 20,36 32,14"
+            fill="#C17B2F"
+            opacity="0.4"
+          />
+          {/* Thin outline for definition */}
+          <polygon
+            points="20,4 32,14 36,18 20,36 4,18 8,14"
+            fill="none"
+            stroke="#C17B2F"
+            strokeWidth="0.75"
+            opacity="0.6"
+          />
         </svg>
       </div>
       <div className="leading-none">
