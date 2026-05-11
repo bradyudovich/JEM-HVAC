@@ -1,8 +1,9 @@
-import { createPageMetadata } from '@/app/lib/metadata'
-import { PageHero } from '@/app/components/PageHero'
 import { CTABanner } from '@/app/components/CTABanner'
-import { testimonials } from '@/app/lib/testimonials'
+import { PageHero } from '@/app/components/PageHero'
 import { TestimonialCard } from '@/app/components/TestimonialCard'
+import { createPageMetadata } from '@/app/lib/metadata'
+import { layoutClasses } from '@/app/lib/styles'
+import { testimonials } from '@/app/lib/testimonials'
 
 export const metadata = createPageMetadata({
   pageName: 'Testimonials',
@@ -14,16 +15,14 @@ export const metadata = createPageMetadata({
 export default function TestimonialsPage() {
   return (
     <>
-      <PageHero
-        title="What Our Customers Say"
-        breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Testimonials' }]}
-      />
+      <PageHero title="What Our Customers Say" breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Testimonials' }]} />
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-accent">Testimonials</p>
-          <h2 className="mb-4 text-2xl font-display font-bold text-primary md:text-4xl">Customer Reviews</h2>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+      <section className={`bg-surface ${layoutClasses.innerSection}`}>
+        <div className={layoutClasses.container}>
+          <p className="text-xs uppercase tracking-widest font-semibold text-accent mb-2">Testimonials</p>
+          <h2 className="text-2xl md:text-3xl font-display font-semibold text-primary mb-3">Customer Reviews</h2>
+          <div className="w-10 h-0.5 bg-accent mb-6" />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
             {testimonials.map((testimonial) => (
               <TestimonialCard key={testimonial.name} {...testimonial} />
             ))}
@@ -33,9 +32,11 @@ export default function TestimonialsPage() {
 
       <CTABanner
         heading="Had a great experience? We’d love to hear from you."
-        subtext="Tell us about your service visit."
+        subtext="Call us or send a message. We respond quickly, show up on time, and always leave the job site clean."
         primaryLabel="Contact Us"
         primaryHref="/contact"
+        secondaryLabel="View Services"
+        secondaryHref="/services"
       />
     </>
   )

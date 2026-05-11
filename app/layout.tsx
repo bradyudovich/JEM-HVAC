@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import { Header } from '@/app/components/Header'
 import { Footer } from '@/app/components/Footer'
+import { Header } from '@/app/components/Header'
 import { siteConfig } from '@/app/lib/site-config'
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0A1628',
+  themeColor: '#1B3A2D',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

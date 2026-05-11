@@ -1,29 +1,30 @@
 import Link from 'next/link'
 import { Container, SectionHeading } from '@/app/components/ui'
 import { siteConfig } from '@/app/lib/site-config'
+import { buttonStyles, layoutClasses } from '@/app/lib/styles'
 
 export function ContactCta() {
   return (
-    <section id="contact" className="bg-accent px-4 py-12 text-center md:px-6 md:py-20">
+    <section id="contact" className={`bg-surface border-t-4 border-accent ${layoutClasses.cta}`}>
       <Container>
-        <SectionHeading
-          eyebrow="Contact"
-          title="Ready for reliable comfort?"
-          description="Schedule an estimate, request service, or ask about preventive maintenance for your heating and cooling systems."
-        />
+        <div className="text-center">
+          <SectionHeading
+            eyebrow="Contact"
+            title="Ready for reliable comfort?"
+            description="Schedule an estimate, request service, or ask about preventive maintenance for your heating and cooling systems."
+            align="center"
+          />
 
-        <div className="mt-8 space-y-2 text-white/90">
-          <p>{siteConfig.phone}</p>
-          <p>{siteConfig.email}</p>
-          <p>{siteConfig.address}</p>
+          <div className="mt-8 space-y-2 text-gray-600">
+            <p>{siteConfig.phone}</p>
+            <p>{siteConfig.email}</p>
+            <p>{siteConfig.address}</p>
+          </div>
+
+          <Link href={`tel:${siteConfig.phone}`} className={`${buttonStyles.primary} mt-8 w-full sm:w-auto`}>
+            Call Now
+          </Link>
         </div>
-
-        <Link
-          href={`tel:${siteConfig.phone}`}
-          className="mt-8 inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white px-8 py-3 font-semibold text-accent hover:bg-gray-100 focus-visible:bg-gray-100"
-        >
-          Call Now
-        </Link>
       </Container>
     </section>
   )

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { layoutClasses } from '@/app/lib/styles'
 
 type Breadcrumb = {
   label: string
@@ -13,15 +14,15 @@ type PageHeroProps = {
 
 export function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps) {
   return (
-    <section className="bg-primary px-4 py-12 text-center md:py-16">
-      <div className="mx-auto max-w-7xl">
-        <nav aria-label="Breadcrumb" className="mb-4 text-sm uppercase tracking-widest text-white/50">
+    <section className={`bg-primary text-center ${layoutClasses.pageHero}`}>
+      <div className={layoutClasses.container}>
+        <nav aria-label="Breadcrumb" className="mb-4 text-xs uppercase tracking-widest text-white/60">
           <ol className="flex flex-wrap items-center justify-center gap-2">
             {breadcrumbs.map((crumb, index) => (
               <li key={`${crumb.label}-${index}`} className="flex items-center gap-2">
                 {index > 0 ? <span aria-hidden="true">/</span> : null}
                 {crumb.href ? (
-                  <Link href={crumb.href} className="inline-flex min-h-[44px] min-w-[44px] items-center hover:text-accent focus-visible:text-accent">
+                  <Link href={crumb.href} className="inline-flex items-center hover:text-accent">
                     {crumb.label}
                   </Link>
                 ) : (
@@ -31,8 +32,10 @@ export function PageHero({ title, subtitle, breadcrumbs }: PageHeroProps) {
             ))}
           </ol>
         </nav>
-        <h1 className="mb-4 text-3xl font-display font-bold text-white md:text-5xl">{title}</h1>
-        {subtitle ? <p className="mx-auto max-w-2xl text-base text-white/70 md:text-xl">{subtitle}</p> : null}
+        <h1 className="text-3xl md:text-4xl font-display font-semibold text-white mb-3">{title}</h1>
+        {subtitle ? (
+          <p className="mx-auto max-w-2xl text-sm md:text-base text-white/75 leading-relaxed">{subtitle}</p>
+        ) : null}
       </div>
     </section>
   )
