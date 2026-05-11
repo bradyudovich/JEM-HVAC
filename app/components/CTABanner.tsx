@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { buttonStyles, layoutClasses } from '@/app/lib/styles'
 
 type CTABannerProps = {
   heading: string
@@ -18,22 +19,16 @@ export function CTABanner({
   secondaryHref,
 }: CTABannerProps) {
   return (
-    <section className="bg-accent px-4 py-12 text-center md:px-6 md:py-16">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="mb-4 text-2xl font-display font-bold text-white md:text-4xl">{heading}</h2>
-        <p className="mb-8 text-lg text-white/80">{subtext}</p>
+    <section className={`border-t-4 border-accent bg-surface ${layoutClasses.cta}`}>
+      <div className={`${layoutClasses.container} text-center`}>
+        <h2 className="text-2xl md:text-3xl font-display font-semibold text-primary mb-3">{heading}</h2>
+        <p className="text-sm md:text-base text-gray-600 leading-relaxed mx-auto max-w-2xl mb-8">{subtext}</p>
         <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <Link
-            href={primaryHref}
-            className="inline-flex min-h-[44px] min-w-[44px] w-full items-center justify-center rounded-full bg-white px-8 py-3 text-center font-semibold text-accent hover:bg-gray-100 focus-visible:bg-gray-100 sm:w-auto"
-          >
+          <Link href={primaryHref} className={`${buttonStyles.primary} w-full sm:w-auto`}>
             {primaryLabel}
           </Link>
           {secondaryLabel && secondaryHref ? (
-            <Link
-              href={secondaryHref}
-              className="inline-flex min-h-[44px] min-w-[44px] w-full items-center justify-center rounded-full border-2 border-white px-8 py-3 text-center font-semibold text-white hover:bg-white hover:text-accent focus-visible:bg-white focus-visible:text-accent sm:w-auto"
-            >
+            <Link href={secondaryHref} className={`${buttonStyles.secondary} w-full sm:w-auto`}>
               {secondaryLabel}
             </Link>
           ) : null}

@@ -1,7 +1,8 @@
 import Link from 'next/link'
+import { buttonStyles, cardStyles, layoutClasses } from '@/app/lib/styles'
 import { createPageMetadata } from '@/app/lib/metadata'
-import { PageHero } from '@/app/components/PageHero'
 import { CTABanner } from '@/app/components/CTABanner'
+import { PageHero } from '@/app/components/PageHero'
 
 export const metadata = createPageMetadata({
   pageName: 'York Extended Warranty',
@@ -11,7 +12,7 @@ export const metadata = createPageMetadata({
 })
 
 const fieldClass =
-  'w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent'
+  'w-full rounded-md border border-gray-200 px-4 py-3 text-sm md:text-base text-gray-700 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20'
 
 export default function YorkWarrantyPage() {
   return (
@@ -26,41 +27,45 @@ export default function YorkWarrantyPage() {
         ]}
       />
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
-        <div className="mx-auto max-w-7xl space-y-8">
-          <article className="rounded-2xl bg-white p-6 shadow-md md:p-8">
-            <h2 className="mb-4 border-t-4 border-accent pt-4 text-xl font-display font-bold text-primary">
-              York Comfort Plan — Terms & Conditions
-            </h2>
-            <Link href="/york_warranty.pdf" className="inline-flex min-h-[44px] min-w-[44px] items-center rounded-full bg-accent px-8 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-orange-600 focus-visible:bg-orange-600">
+      <section className={`bg-surface ${layoutClasses.innerSection}`}>
+        <div className={`${layoutClasses.container} space-y-8`}>
+          <article className={cardStyles.standard}>
+            <p className="text-xs uppercase tracking-widest font-semibold text-accent mb-2">Warranty Details</p>
+            <h2 className="text-base md:text-lg font-display font-semibold text-primary mb-2">York Comfort Plan — Terms & Conditions</h2>
+            <div className="w-10 h-0.5 bg-accent mb-6" />
+            <Link href="/york_warranty.pdf" className={`${buttonStyles.secondary} w-full sm:w-auto`}>
               Download PDF
             </Link>
           </article>
 
-          <form className="space-y-4 rounded-2xl bg-white p-6 shadow-md md:p-10">
-            <label className="flex items-start gap-2 text-base text-gray-700">
-              <input type="checkbox" name="acceptTerms" className="mt-1" />
+          <form className={`${cardStyles.standard} space-y-4`}>
+            <label className="flex items-start gap-3 text-sm md:text-base text-gray-600 leading-relaxed">
+              <input type="checkbox" name="acceptTerms" className="mt-1 accent-accent" />
               <span>I accept the York Comfort Plan terms and conditions</span>
             </label>
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <label className="text-base font-semibold text-gray-700">Name<input type="text" name="name" className={fieldClass} /></label>
-              <label className="text-base font-semibold text-gray-700">Address<input type="text" name="address" className={fieldClass} /></label>
-              <label className="text-base font-semibold text-gray-700">City<input type="text" name="city" className={fieldClass} /></label>
-              <label className="text-base font-semibold text-gray-700">State<input type="text" name="state" className={fieldClass} /></label>
-              <label className="text-base font-semibold text-gray-700">Zip<input type="text" name="zip" className={fieldClass} /></label>
-              <label className="text-base font-semibold text-gray-700">Phone<input type="tel" name="phone" className={fieldClass} /></label>
-              <label className="text-base font-semibold text-gray-700 md:col-span-2">Email<input type="email" name="email" className={fieldClass} /></label>
+              <label className="text-sm font-semibold text-primary">Name<input type="text" name="name" className={fieldClass} /></label>
+              <label className="text-sm font-semibold text-primary">Address<input type="text" name="address" className={fieldClass} /></label>
+              <label className="text-sm font-semibold text-primary">City<input type="text" name="city" className={fieldClass} /></label>
+              <label className="text-sm font-semibold text-primary">State<input type="text" name="state" className={fieldClass} /></label>
+              <label className="text-sm font-semibold text-primary">Zip<input type="text" name="zip" className={fieldClass} /></label>
+              <label className="text-sm font-semibold text-primary">Phone<input type="tel" name="phone" className={fieldClass} /></label>
+              <label className="text-sm font-semibold text-primary md:col-span-2">Email<input type="email" name="email" className={fieldClass} /></label>
             </div>
-            <button type="submit" className="min-h-[44px] min-w-[44px] w-full rounded-full bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-wide text-white hover:bg-orange-600 focus-visible:bg-orange-600">Submit</button>
+            <button type="submit" className={`${buttonStyles.primary} w-full`}>
+              Submit
+            </button>
           </form>
         </div>
       </section>
 
       <CTABanner
         heading="Questions about warranty coverage?"
-        subtext="Our team can walk you through your options and next steps."
+        subtext="Call us or send a message. We respond quickly, show up on time, and always leave the job site clean."
         primaryLabel="Contact Us"
         primaryHref="/contact"
+        secondaryLabel="View Services"
+        secondaryHref="/services"
       />
     </>
   )

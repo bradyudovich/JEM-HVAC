@@ -1,8 +1,9 @@
 import { Container, SectionHeading } from '@/app/components/ui'
+import { cardStyles, layoutClasses } from '@/app/lib/styles'
 
 export function About() {
   return (
-    <section id="about" className="bg-white px-4 py-12 md:px-6 md:py-20">
+    <section id="about" className={`bg-white ${layoutClasses.homepageSection}`}>
       <Container>
         <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-16">
           <SectionHeading
@@ -11,25 +12,18 @@ export function About() {
             description="We believe HVAC service should feel straightforward, respectful, and results-driven. Our team focuses on clear communication, skilled workmanship, and solutions that keep your home or business comfortable in every season."
           />
 
-          <div className="order-last h-56 w-full rounded-2xl bg-surface p-8 shadow-md md:order-none md:h-80">
-            <div className="grid gap-6 sm:grid-cols-2">
-              <div>
-                <p className="text-4xl font-display font-bold text-accent">10+</p>
-                <p>Years serving local homeowners and businesses</p>
+          <div className={`${cardStyles.surface} grid gap-6 sm:grid-cols-2`}>
+            {[
+              ['Nearly 30', 'Years serving local homeowners and businesses'],
+              ['24/7', 'Emergency support availability for urgent comfort issues'],
+              ['All Makes', 'Service for the equipment you already rely on'],
+              ['Family-Owned', 'A team rooted in the same community we serve'],
+            ].map(([value, label]) => (
+              <div key={value}>
+                <p className="text-3xl md:text-4xl font-display font-semibold text-accent mb-2">{value}</p>
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed">{label}</p>
               </div>
-              <div>
-                <p className="text-4xl font-display font-bold text-accent">24/7</p>
-                <p>Emergency support availability for urgent comfort issues</p>
-              </div>
-              <div>
-                <p className="text-4xl font-display font-bold text-accent">100%</p>
-                <p>Commitment to honest recommendations and quality care</p>
-              </div>
-              <div>
-                <p className="text-4xl font-display font-bold text-accent">Top Tier</p>
-                <p>Equipment and installation standards for lasting performance</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </Container>

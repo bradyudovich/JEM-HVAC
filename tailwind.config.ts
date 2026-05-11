@@ -9,11 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#0A1628',
-        accent: '#E8720C',
-        surface: '#F5F4F2',
-        text: '#1A1A1A',
+        primary: '#1B3A2D',
+        accent: '#C17B2F',
+        surface: '#F7F3ED',
         muted: '#6B7280',
+        'green-light': '#E5EFE9',
       },
       fontFamily: {
         sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'sans-serif'],

@@ -17,5 +17,6 @@ export const navLinks: Array<ServiceLink & { children?: ServiceLink[] }> = [
   { label: 'Indoor Air Quality', href: '/indoor-air-quality' },
   { label: 'Testimonials', href: '/testimonials' },
   { label: 'FAQ', href: '/faq' },
+  { label: 'Tips', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ]

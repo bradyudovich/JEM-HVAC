@@ -3,114 +3,113 @@
 import type { FormEvent } from 'react'
 import Link from 'next/link'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
-import { PageHero } from '@/app/components/PageHero'
 import { CTABanner } from '@/app/components/CTABanner'
+import { PageHero } from '@/app/components/PageHero'
+import { cardStyles, buttonStyles, layoutClasses } from '@/app/lib/styles'
+
+const fieldClass =
+  'w-full rounded-md border border-gray-200 px-4 py-3 text-sm md:text-base text-gray-700 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20'
 
 export function ContactPageClient() {
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    // TODO: wire to Resend / Formspree / EmailJS
   }
 
   return (
     <>
       <PageHero
         title="Contact Us"
-        subtitle="We’re here to serve. Our commitment doesn’t end when we leave your driveway."
+        subtitle="We’re easy to reach and quick to respond. Whether you need emergency service, a routine tune-up, or a new system — we’re here to help."
         breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Contact' }]}
       />
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:gap-10 lg:grid-cols-2">
-          <aside className="rounded-2xl bg-primary p-6 text-white md:p-10">
-            <h2 className="mb-6 text-3xl font-display font-bold text-white">Contact Information</h2>
+      <section className={`bg-surface ${layoutClasses.innerSection}`}>
+        <div className={`${layoutClasses.container} grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-10`}>
+          <aside className={`${cardStyles.surface} bg-primary text-white hover:shadow-md`}>
+            <p className="text-xs uppercase tracking-widest font-semibold text-accent mb-2">Get in Touch</p>
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-white mb-3">Contact Information</h2>
+            <div className="w-10 h-0.5 bg-accent mb-6" />
             <div className="space-y-5">
               <div>
-                <p className="flex items-center gap-2 text-white/60"><Phone className="h-5 w-5" />Phone</p>
-                <p className="font-semibold text-white">
-                  <Link
-                    href="tel:1-888-684-0657"
-                    className="inline-flex min-h-[44px] min-w-[44px] items-center text-white hover:text-accent focus-visible:text-accent"
-                  >
+                <p className="flex items-center gap-2 text-white/65 text-sm md:text-base"><Phone className="h-4 w-4" />Phone</p>
+                <p className="mt-1 text-sm md:text-base text-white">
+                  <Link href="tel:1-888-684-0657" className="font-semibold hover:text-accent">
                     1-888-684-0657
                   </Link>{' '}
                   (toll-free)
                 </p>
-                <p className="font-semibold text-white">
-                  <Link
-                    href="tel:410-840-9328"
-                    className="inline-flex min-h-[44px] min-w-[44px] items-center text-white hover:text-accent focus-visible:text-accent"
-                  >
+                <p className="text-sm md:text-base text-white">
+                  <Link href="tel:410-840-9328" className="font-semibold hover:text-accent">
                     410-840-9328
                   </Link>
                 </p>
               </div>
               <div>
-                <p className="flex items-center gap-2 text-white/60"><Mail className="h-5 w-5" />Email</p>
-                <p className="font-semibold text-white">
-                  <Link
-                    href="mailto:contact@4jem.com"
-                    className="inline-flex min-h-[44px] min-w-[44px] items-center text-white hover:text-accent focus-visible:text-accent"
-                  >
+                <p className="flex items-center gap-2 text-white/65 text-sm md:text-base"><Mail className="h-4 w-4" />Email</p>
+                <p className="mt-1 text-sm md:text-base text-white">
+                  <Link href="mailto:contact@4jem.com" className="font-semibold hover:text-accent">
                     contact@4jem.com
                   </Link>
                 </p>
               </div>
               <div>
-                <p className="flex items-center gap-2 text-white/60"><MapPin className="h-5 w-5" />Address</p>
-                <p className="font-semibold text-white">150 Airport Drive, Unit 1, Westminster, MD 21157</p>
+                <p className="flex items-center gap-2 text-white/65 text-sm md:text-base"><MapPin className="h-4 w-4" />Address</p>
+                <p className="mt-1 text-sm md:text-base text-white">150 Airport Drive, Unit 1, Westminster, MD 21157</p>
               </div>
               <div>
-                <p className="flex items-center gap-2 text-white/60"><Clock className="h-5 w-5" />Hours</p>
-                <p className="font-semibold text-white">Mon–Fri 8:00AM–4:30PM | Sat–Sun: Closed | Emergencies: Call for Service</p>
+                <p className="flex items-center gap-2 text-white/65 text-sm md:text-base"><Clock className="h-4 w-4" />Hours</p>
+                <p className="mt-1 text-sm md:text-base text-white">Mon–Fri 8:00AM–4:30PM | Sat–Sun: Closed | Emergencies: Call for Service</p>
               </div>
             </div>
           </aside>
 
-          <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl bg-white p-6 shadow-md md:p-10">
-            <h2 className="mb-2 text-3xl font-display font-bold text-primary">Send a Message</h2>
+          <form onSubmit={handleSubmit} className={`${cardStyles.standard} space-y-4`}>
+            <div>
+              <p className="text-xs uppercase tracking-widest font-semibold text-accent mb-2">Send a Message</p>
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-primary mb-3">How Can We Help?</h2>
+              <div className="w-10 h-0.5 bg-accent mb-6" />
+            </div>
 
             <label className="block">
-              <span className="mb-1 block text-base font-semibold text-gray-700">Name (required)</span>
-              <input required name="name" type="text" className="w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent" />
+              <span className="mb-1 block text-sm font-semibold text-primary">Name (required)</span>
+              <input required name="name" type="text" className={fieldClass} />
             </label>
 
             <label className="block">
-              <span className="mb-1 block text-base font-semibold text-gray-700">Phone</span>
-              <input name="phone" type="tel" className="w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent" />
+              <span className="mb-1 block text-sm font-semibold text-primary">Phone</span>
+              <input name="phone" type="tel" className={fieldClass} />
             </label>
 
             <label className="block">
-              <span className="mb-1 block text-base font-semibold text-gray-700">Email (required)</span>
-              <input required name="email" type="email" className="w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent" />
+              <span className="mb-1 block text-sm font-semibold text-primary">Email (required)</span>
+              <input required name="email" type="email" className={fieldClass} />
             </label>
 
             <label className="block">
-              <span className="mb-1 block text-base font-semibold text-gray-700">City &amp; State</span>
-              <input name="cityState" type="text" className="w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent" />
+              <span className="mb-1 block text-sm font-semibold text-primary">City &amp; State</span>
+              <input name="cityState" type="text" className={fieldClass} />
             </label>
 
             <label className="block">
-              <span className="mb-1 block text-base font-semibold text-gray-700">Message</span>
-              <textarea name="message" className="min-h-[120px] w-full rounded-xl border border-gray-200 px-4 py-3 text-base focus:border-transparent focus:outline-none focus:ring-2 focus:ring-accent md:min-h-[150px]" />
+              <span className="mb-1 block text-sm font-semibold text-primary">Message</span>
+              <textarea name="message" className={`${fieldClass} min-h-[140px]`} />
             </label>
 
-            <button
-              type="submit"
-              className="w-full min-h-[44px] min-w-[44px] rounded-full bg-accent py-4 font-semibold text-white hover:bg-orange-600 focus-visible:bg-orange-600"
-            >
+            <button type="submit" className={`${buttonStyles.primary} w-full`}>
               Submit
             </button>
           </form>
         </div>
       </section>
 
-      <section className="bg-surface px-4 py-12 md:px-6 md:py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex h-56 w-full items-center justify-center rounded-2xl bg-white shadow-sm md:h-72">
-            <div className="text-center text-muted">
-              <MapPin className="mx-auto mb-2 h-8 w-8 opacity-40" aria-hidden="true" />
-              <p className="text-sm text-gray-500">150 Airport Drive, Unit 1, Westminster, MD 21157</p>
+      <section className={`bg-white ${layoutClasses.innerSection}`}>
+        <div className={layoutClasses.container}>
+          <div className={`${cardStyles.standard} flex h-64 items-center justify-center`}>
+            <div className="text-left">
+              <p className="text-xs uppercase tracking-widest font-semibold text-accent mb-2">Visit Us</p>
+              <h2 className="text-2xl md:text-3xl font-display font-semibold text-primary mb-3">Westminster Office</h2>
+              <div className="w-10 h-0.5 bg-accent mb-6" />
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">150 Airport Drive, Unit 1, Westminster, MD 21157</p>
             </div>
           </div>
         </div>
@@ -118,7 +117,7 @@ export function ContactPageClient() {
 
       <CTABanner
         heading="Need immediate HVAC help?"
-        subtext="Call us now or send a message and we’ll respond quickly."
+        subtext="Call us or send a message. We respond quickly, show up on time, and always leave the job site clean."
         primaryLabel="Call 1-888-684-0657"
         primaryHref="tel:1-888-684-0657"
         secondaryLabel="View Services"
